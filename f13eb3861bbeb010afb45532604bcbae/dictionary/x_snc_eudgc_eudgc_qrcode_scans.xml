@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="EuDGC QrCode Scans" max_length="40" name="x_snc_eudgc_eudgc_qrcode_scans" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="EuDGC QrCode" max_length="8000" name="eudgc_qrcode" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Signature Status" max_length="40" name="signature_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Invalid" value="invalid"/>
+                <element inactive_on_update="false" label="Valid" value="valid"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Status Icon" max_length="40" name="status_icon" type="string"/>
+    </element>
+</database>

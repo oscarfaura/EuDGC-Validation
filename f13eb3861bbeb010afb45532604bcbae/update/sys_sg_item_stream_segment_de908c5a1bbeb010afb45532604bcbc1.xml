@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_item_stream_segment">
+    <sys_sg_item_stream_segment action="INSERT_OR_UPDATE">
+        <empty_state/>
+        <interleave_order_direction>asc</interleave_order_direction>
+        <name>EuDGC QrCode Scans Item Stream Segment</name>
+        <order>0</order>
+        <screen display_value="EuDGC QrCode Scans">da908c5a1bbeb010afb45532604bcbbf</screen>
+        <sys_class_name>sys_sg_item_stream_segment</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 16:13:31</sys_created_on>
+        <sys_id>de908c5a1bbeb010afb45532604bcbc1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>EuDGC QrCode Scans Item Stream Segment</sys_name>
+        <sys_package display_value="EuDGC" source="x_snc_eudgc">f13eb3861bbeb010afb45532604bcbae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_update_name>sys_sg_item_stream_segment_de908c5a1bbeb010afb45532604bcbc1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 16:13:31</sys_updated_on>
+    </sys_sg_item_stream_segment>
+</record_update>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_action_param_map">
+    <sys_sg_action_param_map action="INSERT_OR_UPDATE">
+        <button display_value="New Button (EuDGC Validation Log)">16908c5a1bbeb010afb45532604bcbfd</button>
+        <item_parameter display_value="EuDGC Validation Log family_name">96908c5a1bbeb010afb45532604bcbfc</item_parameter>
+        <sys_class_name>sys_sg_action_param_map</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 16:13:32</sys_created_on>
+        <sys_id>16908c5a1bbeb010afb45532604bcbff</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>96908c5a1bbeb010afb45532604bcbfc</sys_name>
+        <sys_package display_value="EuDGC" source="x_snc_eudgc">f13eb3861bbeb010afb45532604bcbae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_update_name>sys_sg_action_param_map_16908c5a1bbeb010afb45532604bcbff</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 16:13:32</sys_updated_on>
+        <ui_parameter display_value="Family Name">12908c5a1bbeb010afb45532604bcbfe</ui_parameter>
+    </sys_sg_action_param_map>
+</record_update>

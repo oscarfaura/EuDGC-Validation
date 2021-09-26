@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_applet_launcher_tab">
+    <sys_sg_applet_launcher_tab action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applet_launcher display_value="EuDGC Scan">0a90c41a1bbeb010afb45532604bcbc2</applet_launcher>
+        <icon display_value="Home EuDGC Scan">0290c41a1bbeb010afb45532604bcbc4</icon>
+        <label>EuDGC Scan</label>
+        <roles>x_snc_eudgc.eudgc_admin,x_snc_eudgc.eudgc_validator,x_snc_eudgc.eudgc_controller</roles>
+        <sys_class_name>sys_sg_applet_launcher_tab</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 16:13:31</sys_created_on>
+        <sys_id>ce90c41a1bbeb010afb45532604bcbc3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>EuDGC Scan</sys_name>
+        <sys_package display_value="EuDGC" source="x_snc_eudgc">f13eb3861bbeb010afb45532604bcbae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_update_name>sys_sg_applet_launcher_tab_ce90c41a1bbeb010afb45532604bcbc3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 16:13:31</sys_updated_on>
+    </sys_sg_applet_launcher_tab>
+</record_update>

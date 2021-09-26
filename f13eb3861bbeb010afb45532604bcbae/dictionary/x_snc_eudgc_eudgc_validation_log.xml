@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="EuDGC Validation Log" max_length="40" name="x_snc_eudgc_eudgc_validation_log" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Date of Birth" max_length="40" name="date_of_birth" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="EuDGC Certificate Status" max_length="40" name="eudgc_certificate_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Invalid" value="invalid"/>
+                <element inactive_on_update="false" label="Valid" value="valid"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Family Name" max_length="255" name="family_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Given Name" max_length="255" name="given_name" type="string"/>
+    </element>
+</database>
