@@ -1,0 +1,2467 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <compiler_build>glide-rome-06-23-2021__patch1-08-26-2021_09-06-2021_0849.zip</compiler_build>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Validate a Digital Green Certificate QrCode string according to event dates and store the end result in a table</description>
+        <internal_name>eudgc_validation</internal_name>
+        <label_cache>[{"name":"7b2b3926-8520-4bb4-a204-52b2dfd70e0a.__dont_treat_as_error__","label":"12➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","visible_in_ui":"false","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"7b2b3926-8520-4bb4-a204-52b2dfd70e0a.__action_status__","label":"12➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"7b2b3926-8520-4bb4-a204-52b2dfd70e0a.table_name","label":"12➛EuDGC Validation Log Table","reference":"x_snc_eudgc_eudgc_validation_log","reference_display":"EuDGC Validation Log","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"7b2b3926-8520-4bb4-a204-52b2dfd70e0a.record","label":"12➛EuDGC Validation Log Record","reference":"x_snc_eudgc_eudgc_validation_log","reference_display":"EuDGC Validation Log","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"4da086f6-f78d-486b-b086-1c7753e58817.__dont_treat_as_error__","label":"8➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","visible_in_ui":"false","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"4da086f6-f78d-486b-b086-1c7753e58817.__action_status__","label":"8➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"4da086f6-f78d-486b-b086-1c7753e58817.table_name","label":"8➛EuDGC Validation Log Table","reference":"x_snc_eudgc_eudgc_validation_log","reference_display":"EuDGC Validation Log","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"4da086f6-f78d-486b-b086-1c7753e58817.record","label":"8➛EuDGC Validation Log Record","reference":"x_snc_eudgc_eudgc_validation_log","reference_display":"EuDGC Validation Log","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"b331ccbe-b89d-418e-b1b9-36c4c8106060.__dont_treat_as_error__","label":"6➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","visible_in_ui":"false","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"b331ccbe-b89d-418e-b1b9-36c4c8106060.__action_status__","label":"6➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"b331ccbe-b89d-418e-b1b9-36c4c8106060.table_name","label":"6➛EuDGC Validation Log Table","reference":"x_snc_eudgc_eudgc_validation_log","reference_display":"EuDGC Validation Log","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"b331ccbe-b89d-418e-b1b9-36c4c8106060.record","label":"6➛EuDGC Validation Log Record","reference":"x_snc_eudgc_eudgc_validation_log","reference_display":"EuDGC Validation Log","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"062c6d70-b822-4222-8553-8f42a84fdfaf.test_validity_date","label":"4➛Test Validity Date","reference_display":"Test Validity Date","type":"glide_date","base_type":"glide_date","attributes":{"uiType":"glide_date","uiTypeLabel":"Date","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"465573ea-b214-4ee0-b019-1f436ffcf0f8"}},{"name":"062c6d70-b822-4222-8553-8f42a84fdfaf.complete_vaccination_validity_date","label":"4➛Complete Vaccination Validity Date","reference_display":"Complete Vaccination Validity Date","type":"glide_date","base_type":"glide_date","attributes":{"uiType":"glide_date","uiTypeLabel":"Date","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"cb7ca6b8-a2e9-4022-8c4e-33f806a47b67"}},{"name":"062c6d70-b822-4222-8553-8f42a84fdfaf.partial_vaccination_validity_date","label":"4➛Partial Vaccination Validity Date","reference_display":"Partial Vaccination Validity Date","type":"glide_date","base_type":"glide_date","attributes":{"uiType":"glide_date","uiTypeLabel":"Date","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"614905a8-d40c-4dde-8553-c3e2243b3bcb"}},{"name":"062c6d70-b822-4222-8553-8f42a84fdfaf.today","label":"4➛Today","reference_display":"Today","type":"glide_date","base_type":"glide_date","attributes":{"uiType":"glide_date","uiTypeLabel":"Date","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"cafa0d4a-13cc-4d8e-8417-3e654af79682"}},{"name":"062c6d70-b822-4222-8553-8f42a84fdfaf.__dont_treat_as_error__","label":"4➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiTypeLabel":"True/False","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"boolean","visible_in_ui":"false","action_error_output":"true","uiUniqueId":"da2c51b3-f0bd-4280-b196-0568049c6f9d"}},{"name":"062c6d70-b822-4222-8553-8f42a84fdfaf.__action_status__","label":"4➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiTypeLabel":"Object","co_type_name":"FD488d58521372f0106c62381d76562f79","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"object","action_error_output":"true","uiUniqueId":"92647426-5f3b-404f-a5ce-7f63ef8a7ff4"}},{"name":"Created_1.current.eudgc_qrcode","label":"Trigger➛EuDGC QrCode Scans Record➛EuDGC QrCode","reference":"","reference_display":"EuDGC QrCode","type":"string","base_type":"string","parent_table_name":"x_snc_eudgc_eudgc_qrcode_scans","column_name":"eudgc_qrcode"},{"name":"3e72fa59-9217-42a6-8e36-9ea7970fd5de.test_date","label":"1➛test_date","reference_display":"test_date","type":"glide_date","base_type":"glide_date","attributes":{"uiType":"glide_date","uiTypeLabel":"Date","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"484514ea-a5cc-4dd9-9b4e-d36d87f58f6a"}},{"name":"3e72fa59-9217-42a6-8e36-9ea7970fd5de.test_result_date","label":"1➛test_result_date","reference_display":"test_result_date","type":"glide_date","base_type":"glide_date","attributes":{"uiType":"glide_date","uiTypeLabel":"Date","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"6993bfae-d5cd-468d-8a74-af038caddf12"}},{"name":"3e72fa59-9217-42a6-8e36-9ea7970fd5de.test_result","label":"1➛test_result","reference_display":"test_result","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"c30e18c1-1c20-4767-bf8b-1aa9f23720e8"}},{"name":"3e72fa59-9217-42a6-8e36-9ea7970fd5de.recovery_valid_until","label":"1➛recovery_valid_until","reference_display":"recovery_valid_until","type":"glide_date","base_type":"glide_date","attributes":{"uiType":"glide_date","uiTypeLabel":"Date","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"8517396f-455f-48eb-b12e-ebc819959fd2"}},{"name":"3e72fa59-9217-42a6-8e36-9ea7970fd5de.vx_dose_num","label":"1➛vx_dose_num","reference_display":"vx_dose_num","type":"integer","base_type":"integer","attributes":{"uiType":"integer","uiTypeLabel":"Integer","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"bc3e814b-1d67-4b6d-95c5-d574388edc9f"}},{"name":"3e72fa59-9217-42a6-8e36-9ea7970fd5de.vx_dose_tot","label":"1➛vx_dose_tot","reference_display":"vx_dose_tot","type":"integer","base_type":"integer","attributes":{"uiType":"integer","uiTypeLabel":"Integer","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"07afc8d2-1e51-4299-ab9e-832686c66ae2"}},{"name":"3e72fa59-9217-42a6-8e36-9ea7970fd5de.vx_date","label":"1➛vx_date","reference_display":"vx_date","type":"glide_date","base_type":"glide_date","attributes":{"uiType":"glide_date","uiTypeLabel":"Date","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"49026d9a-e228-4ec3-b9cf-d5fbe6440ede"}},{"name":"3e72fa59-9217-42a6-8e36-9ea7970fd5de.date_of_birth","label":"1➛date_of_birth","reference_display":"date_of_birth","type":"glide_date","base_type":"glide_date","attributes":{"uiType":"glide_date","uiTypeLabel":"Date","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"6e4b0ae0-3354-49c0-bd7a-8a1010a3b761"}},{"name":"3e72fa59-9217-42a6-8e36-9ea7970fd5de.family_name","label":"1➛family_name","reference_display":"family_name","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"fe160681-d0f0-4b9d-a90f-027116d08edb"}},{"name":"3e72fa59-9217-42a6-8e36-9ea7970fd5de.given_name","label":"1➛given_name","reference_display":"given_name","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"03c32f18-ffcb-461b-a5e6-dd45c5488240"}},{"name":"3e72fa59-9217-42a6-8e36-9ea7970fd5de.status","label":"1➛status","reference_display":"status","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"3e6e0689-59c7-41c1-981e-6953084a00b8"}},{"name":"3e72fa59-9217-42a6-8e36-9ea7970fd5de.__dont_treat_as_error__","label":"1➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiTypeLabel":"True/False","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"boolean","visible_in_ui":"false","action_error_output":"true","uiUniqueId":"6644db4d-54fe-446f-9fa7-b86b67d452ae"}},{"name":"3e72fa59-9217-42a6-8e36-9ea7970fd5de.__action_status__","label":"1➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiTypeLabel":"Object","co_type_name":"FD22a2e81af972f0108774b97ab4e660f0","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"object","action_error_output":"true","uiUniqueId":"c80a75fd-76f8-4413-9f3c-4735af995f76"}},{"name":"76ef470f-8d1c-4ef6-bbc3-749d5dfcff96.record","label":"3➛EuDGC QrCode Scans Record","reference":"x_snc_eudgc_eudgc_qrcode_scans","reference_display":"EuDGC QrCode Scans","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"76ef470f-8d1c-4ef6-bbc3-749d5dfcff96.table_name","label":"3➛EuDGC QrCode Scans Table","reference":"x_snc_eudgc_eudgc_qrcode_scans","reference_display":"EuDGC QrCode Scans","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"76ef470f-8d1c-4ef6-bbc3-749d5dfcff96.__action_status__","label":"3➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"76ef470f-8d1c-4ef6-bbc3-749d5dfcff96.__dont_treat_as_error__","label":"3➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","visible_in_ui":"false","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Created_1.current","label":"Trigger➛EuDGC QrCode Scans Record","reference":"x_snc_eudgc_eudgc_qrcode_scans","reference_display":"EuDGC QrCode Scans","type":"reference","base_type":"reference","attributes":{}},{"name":"6d8b5130-038f-425a-816f-649cb184cfcf.record","label":"14➛EuDGC QrCode Scans Record","reference":"x_snc_eudgc_eudgc_qrcode_scans","reference_display":"EuDGC QrCode Scans","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"6d8b5130-038f-425a-816f-649cb184cfcf.table_name","label":"14➛EuDGC QrCode Scans Table","reference":"x_snc_eudgc_eudgc_qrcode_scans","reference_display":"EuDGC QrCode Scans","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"6d8b5130-038f-425a-816f-649cb184cfcf.__action_status__","label":"14➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"6d8b5130-038f-425a-816f-649cb184cfcf.__dont_treat_as_error__","label":"14➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","visible_in_ui":"false","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"0fe3b586-ce56-4887-8f6a-1df346bfac34.record","label":"10➛EuDGC Validation Log Record","reference":"x_snc_eudgc_eudgc_validation_log","reference_display":"EuDGC Validation Log","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"0fe3b586-ce56-4887-8f6a-1df346bfac34.table_name","label":"10➛EuDGC Validation Log Table","reference":"x_snc_eudgc_eudgc_validation_log","reference_display":"EuDGC Validation Log","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"0fe3b586-ce56-4887-8f6a-1df346bfac34.__action_status__","label":"10➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"0fe3b586-ce56-4887-8f6a-1df346bfac34.__dont_treat_as_error__","label":"10➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","visible_in_ui":"false","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}}]</label_cache>
+        <master_snapshot>d5ef78de1bf2f010afb45532604bcb18</master_snapshot>
+        <name>EuDGC Validation</name>
+        <natlang/>
+        <outputs/>
+        <remote_trigger_id>1eefb8de1bf2f010afb45532604bcbb4</remote_trigger_id>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:04:54</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b785f8de1bb2f010afb45532604bcb12</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>EuDGC Validation</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="EuDGC" source="x_snc_eudgc">f13eb3861bbeb010afb45532604bcbae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_update_name>sys_hub_flow_b785f8de1bb2f010afb45532604bcb12</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:09</sys_updated_on>
+        <type>flow</type>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=b785f8de1bb2f010afb45532604bcb12"/>
+    <sys_variable_value action="delete_multiple" query="document_key=b785f8de1bb2f010afb45532604bcb12"/>
+    <sys_flow_record_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="x_snc_eudgc_eudgc_qrcode_scans">^EQ<item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
+        <name/>
+        <on_delete>false</on_delete>
+        <on_insert>true</on_insert>
+        <on_update>false</on_update>
+        <run_flow_in>background</run_flow_in>
+        <run_on_extended>false</run_on_extended>
+        <run_when_setting>both</run_when_setting>
+        <run_when_user_list/>
+        <run_when_user_setting>any</run_when_user_setting>
+        <sys_class_name>sys_flow_record_trigger</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:08</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>1eefb8de1bf2f010afb45532604bcbb4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:08</sys_updated_on>
+        <table>x_snc_eudgc_eudgc_qrcode_scans</table>
+    </sys_flow_record_trigger>
+    <sys_trigger_runner_mapping action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <data>{"table":"sys_trigger_runner_mapping","id":"9aefb8de1bf2f010afb45532604bcbb5","name":"trigger_runner","type":"java.util.Collections$UnmodifiableMap"}</data>
+        <identifier>b785f8de1bb2f010afb45532604bcb12</identifier>
+        <runner>FDTriggerRunner</runner>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:08</sys_created_on>
+        <sys_id>9aefb8de1bf2f010afb45532604bcbb5</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:08</sys_updated_on>
+        <trigger display_value="">1eefb8de1bf2f010afb45532604bcbb4</trigger>
+    </sys_trigger_runner_mapping>
+    <sys_json_chunk action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAAAGXLWwqAIBBA0b3MdytwKxGD5fggGUFHLKK99yAo6Pce7ga5MtqYGgYGBaOeZpdTZQPdTc0TYy2UMYYioPrh0wuJBHbXl8T/jpc1r48mRlqE2JA5u9WxEOwH5v2lw4YAAAA=</data>
+        <document_id>9aefb8de1bf2f010afb45532604bcbb5</document_id>
+        <field>trigger_runner</field>
+        <length>144</length>
+        <position>0</position>
+        <source_table>sys_trigger_runner_mapping</source_table>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:08</sys_created_on>
+        <sys_id>5aefb8de1bf2f010afb45532604bcbb6</sys_id>
+    </sys_json_chunk>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=b785f8de1bb2f010afb45532604bcb12^sys_idNOT IN9aefb8de1bf2f010afb45532604bcbb5"/>
+    <sys_hub_trigger_instance action="delete_multiple" query="flow=b785f8de1bb2f010afb45532604bcb12^sys_idNOT INd83678121bf2f010afb45532604bcb57"/>
+    <sys_hub_trigger_instance action="INSERT_OR_UPDATE">
+        <comment>A new DGC QrCode is scanned</comment>
+        <display_text/>
+        <flow display_value="EuDGC Validation">b785f8de1bb2f010afb45532604bcb12</flow>
+        <name>Created</name>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:07:40</sys_created_on>
+        <sys_id>d83678121bf2f010afb45532604bcb57</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:09</sys_updated_on>
+        <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
+        <trigger_inputs/>
+        <trigger_outputs/>
+        <trigger_type>record_create</trigger_type>
+    </sys_hub_trigger_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=d83678121bf2f010afb45532604bcb57"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>d83678121bf2f010afb45532604bcb57</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:07:40</sys_created_on>
+        <sys_id>943678121bf2f010afb45532604bcb59</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:07:40</sys_updated_on>
+        <value>x_snc_eudgc_eudgc_qrcode_scans</value>
+        <variable display_value="Table">cfca92e0c31322002841b63b12d3ae00</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>d83678121bf2f010afb45532604bcb57</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:07:40</sys_created_on>
+        <sys_id>9c3678121bf2f010afb45532604bcb58</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:07:40</sys_updated_on>
+        <value>^EQ</value>
+        <variable display_value="Condition">66aadea0c31322002841b63b12d3aebf</variable>
+    </sys_variable_value>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=b785f8de1bb2f010afb45532604bcb12^sys_idNOT IN3f85f8de1bb2f010afb45532604bcb15"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>b785f8de1bb2f010afb45532604bcb12</id>
+        <name>EuDGC Validation</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:04:54</sys_created_on>
+        <sys_id>3f85f8de1bb2f010afb45532604bcb15</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:04:54</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_hub_flow_input action="delete_multiple" query="model=b785f8de1bb2f010afb45532604bcb12^sys_idNOT IN543678121bf2f010afb45532604bcb46,d03678121bf2f010afb45532604bcb50"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="EuDGC Validation">b785f8de1bb2f010afb45532604bcb12</model>
+        <model_id>b785f8de1bb2f010afb45532604bcb12</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_b785f8de1bb2f010afb45532604bcb12</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:07:40</sys_created_on>
+        <sys_id>543678121bf2f010afb45532604bcb46</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:09</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="EuDGC Validation">b785f8de1bb2f010afb45532604bcb12</model>
+        <model_id>b785f8de1bb2f010afb45532604bcb12</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_b785f8de1bb2f010afb45532604bcb12</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:07:40</sys_created_on>
+        <sys_id>d03678121bf2f010afb45532604bcb50</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:09</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_instance action="delete_multiple" query="flow=b785f8de1bb2f010afb45532604bcb12^sys_idNOT IN23e6b8521bf2f010afb45532604bcb70,2b2730921bf2f010afb45532604bcbfc,503678121bf2f010afb45532604bcb68,7497f8921bf2f010afb45532604bcb51,a439bc161bf2f010afb45532604bcb6a,a60a30961bf2f010afb45532604bcbca,c98af8961bf2f010afb45532604bcbd1,e039bc161bf2f010afb45532604bcb22"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent/>
+        <comment>Delete QrCode (we don't want to store all DGC data)</comment>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="EuDGC Validation">b785f8de1bb2f010afb45532604bcb12</flow>
+        <order>3</order>
+        <parent_ui_id>7b01a9e0-8699-4ed1-962f-ecae7d2bde45</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:10:54</sys_created_on>
+        <sys_id>23e6b8521bf2f010afb45532604bcb70</sys_id>
+        <sys_mod_count>18</sys_mod_count>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_updated_by>dgc_validator</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:51:11</sys_updated_on>
+        <ui_id>76ef470f-8d1c-4ef6-bbc3-749d5dfcff96</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=23e6b8521bf2f010afb45532604bcb70"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>23e6b8521bf2f010afb45532604bcb70</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:10:54</sys_created_on>
+        <sys_id>27e6b8521bf2f010afb45532604bcb72</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:10:54</sys_updated_on>
+        <value>eudgc_qrcode=--Processed--^signature_status=valid^status_icon=e37590961b32f010afb45532604bcbd1</value>
+        <variable display_value="Fields">02d01916c31332002841b63b12d3aeee</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>23e6b8521bf2f010afb45532604bcb70</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:10:54</sys_created_on>
+        <sys_id>e7e6b8521bf2f010afb45532604bcb72</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:10:54</sys_updated_on>
+        <value>x_snc_eudgc_eudgc_qrcode_scans</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=23e6b8521bf2f010afb45532604bcb70"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>23e6b8521bf2f010afb45532604bcb70</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:10:54</sys_created_on>
+        <sys_id>efe6b8521bf2f010afb45532604bcb71</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:10:54</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{Created_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>23e6b8521bf2f010afb45532604bcb70</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:10:54</sys_created_on>
+        <sys_id>2fe6b8521bf2f010afb45532604bcb71</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:10:54</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>23e6b8521bf2f010afb45532604bcb70</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:10:54</sys_created_on>
+        <sys_id>a3e6b8521bf2f010afb45532604bcb72</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:10:54</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="EuDGC Date Rules">337d18521b72f010afb45532604bcbdd</action_type>
+        <action_type_parent/>
+        <comment>Get Validity dates based on DGC rules</comment>
+        <compiled_snapshot>337d18521b72f010afb45532604bcbdd</compiled_snapshot>
+        <display_text/>
+        <flow display_value="EuDGC Validation">b785f8de1bb2f010afb45532604bcb12</flow>
+        <order>4</order>
+        <parent_ui_id>7b01a9e0-8699-4ed1-962f-ecae7d2bde45</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:11:59</sys_created_on>
+        <sys_id>2b2730921bf2f010afb45532604bcbfc</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_updated_by>dgc_validator</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:51:11</sys_updated_on>
+        <ui_id>062c6d70-b822-4222-8553-8f42a84fdfaf</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=2b2730921bf2f010afb45532604bcbfc"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>2b2730921bf2f010afb45532604bcbfc</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:11:59</sys_created_on>
+        <sys_id>a72730921bf2f010afb45532604bcbfe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:11:59</sys_updated_on>
+        <value/>
+        <variable display_value="Vaccination Date">737d18521b72f010afb45532604bcbe8</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>2b2730921bf2f010afb45532604bcbfc</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:11:59</sys_created_on>
+        <sys_id>e32730921bf2f010afb45532604bcbfe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:11:59</sys_updated_on>
+        <value/>
+        <variable display_value="Test Date">377d18521b72f010afb45532604bcbe0</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=2b2730921bf2f010afb45532604bcbfc"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>test_date</field>
+        <id>2b2730921bf2f010afb45532604bcbfc</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:11:59</sys_created_on>
+        <sys_id>632730921bf2f010afb45532604bcbfe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:11:59</sys_updated_on>
+        <table>var__m_sys_hub_action_input_337d18521b72f010afb45532604bcbdd</table>
+        <value>{{3e72fa59-9217-42a6-8e36-9ea7970fd5de.test_date}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>vaccination_date</field>
+        <id>2b2730921bf2f010afb45532604bcbfc</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:11:59</sys_created_on>
+        <sys_id>af2730921bf2f010afb45532604bcbfd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:11:59</sys_updated_on>
+        <table>var__m_sys_hub_action_input_337d18521b72f010afb45532604bcbdd</table>
+        <value>{{3e72fa59-9217-42a6-8e36-9ea7970fd5de.vx_date}}</value>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="EuDGC_Validation_API">d2a2e81a1b72f010afb45532604bcbbc</action_type>
+        <action_type_parent/>
+        <comment>Pass the scanned QrCode string to the validation API</comment>
+        <compiled_snapshot>d2a2e81a1b72f010afb45532604bcbbc</compiled_snapshot>
+        <display_text/>
+        <flow display_value="EuDGC Validation">b785f8de1bb2f010afb45532604bcb12</flow>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:07:40</sys_created_on>
+        <sys_id>503678121bf2f010afb45532604bcb68</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_updated_by>dgc_validator</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:51:11</sys_updated_on>
+        <ui_id>3e72fa59-9217-42a6-8e36-9ea7970fd5de</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=503678121bf2f010afb45532604bcb68"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>503678121bf2f010afb45532604bcb68</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:07:40</sys_created_on>
+        <sys_id>d43678121bf2f010afb45532604bcb6a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:07:40</sys_updated_on>
+        <value/>
+        <variable display_value="hc1_qrcode">e6a2e81a1b72f010afb45532604bcbbf</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=503678121bf2f010afb45532604bcb68"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>hc1_qrcode</field>
+        <id>503678121bf2f010afb45532604bcb68</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:07:40</sys_created_on>
+        <sys_id>503678121bf2f010afb45532604bcb6a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:07:40</sys_updated_on>
+        <table>var__m_sys_hub_action_input_d2a2e81a1b72f010afb45532604bcbbc</table>
+        <value>{{Created_1.current.eudgc_qrcode}}</value>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent/>
+        <comment>Delete QrCode (we don't want to store all DGC data) and report signature is Invalid</comment>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="EuDGC Validation">b785f8de1bb2f010afb45532604bcb12</flow>
+        <order>14</order>
+        <parent_ui_id>a445683f-afde-4090-a200-fe14badb7317</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:13:43</sys_created_on>
+        <sys_id>7497f8921bf2f010afb45532604bcb51</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_updated_by>dgc_validator</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:51:11</sys_updated_on>
+        <ui_id>6d8b5130-038f-425a-816f-649cb184cfcf</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=7497f8921bf2f010afb45532604bcb51"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>7497f8921bf2f010afb45532604bcb51</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:13:43</sys_created_on>
+        <sys_id>b097f8921bf2f010afb45532604bcb54</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:13:43</sys_updated_on>
+        <value>x_snc_eudgc_eudgc_qrcode_scans</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>7497f8921bf2f010afb45532604bcb51</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:13:43</sys_created_on>
+        <sys_id>b897f8921bf2f010afb45532604bcb53</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:13:43</sys_updated_on>
+        <value>eudgc_qrcode=--Processed--^signature_status=invalid^status_icon=a875d0961b32f010afb45532604bcb30</value>
+        <variable display_value="Fields">02d01916c31332002841b63b12d3aeee</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=7497f8921bf2f010afb45532604bcb51"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>7497f8921bf2f010afb45532604bcb51</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:13:43</sys_created_on>
+        <sys_id>7497f8921bf2f010afb45532604bcb53</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:13:43</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{Created_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>7497f8921bf2f010afb45532604bcb51</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:13:43</sys_created_on>
+        <sys_id>bc97f8921bf2f010afb45532604bcb52</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:13:43</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>7497f8921bf2f010afb45532604bcb51</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:13:43</sys_created_on>
+        <sys_id>3897f8921bf2f010afb45532604bcb53</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:13:43</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent/>
+        <comment>Log a valid DGC for the user</comment>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="EuDGC Validation">b785f8de1bb2f010afb45532604bcb12</flow>
+        <order>8</order>
+        <parent_ui_id>c9d626b7-409c-4a7a-9407-afbe26c0e26f</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:20:48</sys_created_on>
+        <sys_id>a439bc161bf2f010afb45532604bcb6a</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_updated_by>dgc_validator</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:51:11</sys_updated_on>
+        <ui_id>4da086f6-f78d-486b-b086-1c7753e58817</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=a439bc161bf2f010afb45532604bcb6a"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>a439bc161bf2f010afb45532604bcb6a</document_key>
+        <order>0</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:20:48</sys_created_on>
+        <sys_id>a839bc161bf2f010afb45532604bcb6b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:20:48</sys_updated_on>
+        <value>x_snc_eudgc_eudgc_validation_log</value>
+        <variable display_value="Table">61e05916c31332002841b63b12d3aee4</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=a439bc161bf2f010afb45532604bcb6a"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>a439bc161bf2f010afb45532604bcb6a</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:20:48</sys_created_on>
+        <sys_id>6439bc161bf2f010afb45532604bcb6b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:20:48</sys_updated_on>
+        <table>var__m_sys_hub_action_input_2de05916c31332002841b63b12d3aee1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>a439bc161bf2f010afb45532604bcb6a</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:20:48</sys_created_on>
+        <sys_id>2839bc161bf2f010afb45532604bcb6b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:20:48</sys_updated_on>
+        <table>var__m_sys_hub_action_input_2de05916c31332002841b63b12d3aee1</table>
+        <value>given_name={{3e72fa59-9217-42a6-8e36-9ea7970fd5de.given_name}}^family_name={{3e72fa59-9217-42a6-8e36-9ea7970fd5de.family_name}}^date_of_birth={{3e72fa59-9217-42a6-8e36-9ea7970fd5de.date_of_birth}}^eudgc_certificate_status=valid</value>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent/>
+        <comment>Log a valid DGC for the user</comment>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="EuDGC Validation">b785f8de1bb2f010afb45532604bcb12</flow>
+        <order>10</order>
+        <parent_ui_id>c7ba0854-8858-49ff-b2b1-4bdefd6c85c2</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:24:29</sys_created_on>
+        <sys_id>a60a30961bf2f010afb45532604bcbca</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_updated_by>dgc_validator</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:51:11</sys_updated_on>
+        <ui_id>0fe3b586-ce56-4887-8f6a-1df346bfac34</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=a60a30961bf2f010afb45532604bcbca"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>a60a30961bf2f010afb45532604bcbca</document_key>
+        <order>0</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:24:29</sys_created_on>
+        <sys_id>a20a30961bf2f010afb45532604bcbcc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:24:29</sys_updated_on>
+        <value>x_snc_eudgc_eudgc_validation_log</value>
+        <variable display_value="Table">61e05916c31332002841b63b12d3aee4</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=a60a30961bf2f010afb45532604bcbca"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>a60a30961bf2f010afb45532604bcbca</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:24:29</sys_created_on>
+        <sys_id>6e0a30961bf2f010afb45532604bcbcb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:24:29</sys_updated_on>
+        <table>var__m_sys_hub_action_input_2de05916c31332002841b63b12d3aee1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>a60a30961bf2f010afb45532604bcbca</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:24:29</sys_created_on>
+        <sys_id>220a30961bf2f010afb45532604bcbcc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:24:29</sys_updated_on>
+        <table>var__m_sys_hub_action_input_2de05916c31332002841b63b12d3aee1</table>
+        <value>given_name={{3e72fa59-9217-42a6-8e36-9ea7970fd5de.given_name}}^family_name={{3e72fa59-9217-42a6-8e36-9ea7970fd5de.family_name}}^date_of_birth={{3e72fa59-9217-42a6-8e36-9ea7970fd5de.date_of_birth}}^eudgc_certificate_status=valid</value>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent/>
+        <comment>Log an invalid DGC for the user</comment>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="EuDGC Validation">b785f8de1bb2f010afb45532604bcb12</flow>
+        <order>12</order>
+        <parent_ui_id>bc9cd731-206d-47df-bf1c-e9a45bfc048e</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:26:34</sys_created_on>
+        <sys_id>c98af8961bf2f010afb45532604bcbd1</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_updated_by>dgc_validator</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:51:11</sys_updated_on>
+        <ui_id>7b2b3926-8520-4bb4-a204-52b2dfd70e0a</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=c98af8961bf2f010afb45532604bcbd1"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>c98af8961bf2f010afb45532604bcbd1</document_key>
+        <order>0</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:26:34</sys_created_on>
+        <sys_id>cd8af8961bf2f010afb45532604bcbd2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:26:34</sys_updated_on>
+        <value>x_snc_eudgc_eudgc_validation_log</value>
+        <variable display_value="Table">61e05916c31332002841b63b12d3aee4</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=c98af8961bf2f010afb45532604bcbd1"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>c98af8961bf2f010afb45532604bcbd1</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:26:34</sys_created_on>
+        <sys_id>898af8961bf2f010afb45532604bcbd2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:26:34</sys_updated_on>
+        <table>var__m_sys_hub_action_input_2de05916c31332002841b63b12d3aee1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>c98af8961bf2f010afb45532604bcbd1</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:26:34</sys_created_on>
+        <sys_id>4d8af8961bf2f010afb45532604bcbd2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:26:34</sys_updated_on>
+        <table>var__m_sys_hub_action_input_2de05916c31332002841b63b12d3aee1</table>
+        <value>given_name={{3e72fa59-9217-42a6-8e36-9ea7970fd5de.given_name}}^family_name={{3e72fa59-9217-42a6-8e36-9ea7970fd5de.family_name}}^date_of_birth={{3e72fa59-9217-42a6-8e36-9ea7970fd5de.date_of_birth}}^eudgc_certificate_status=invalid</value>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent/>
+        <comment>Log a valid DGC for the user</comment>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="EuDGC Validation">b785f8de1bb2f010afb45532604bcb12</flow>
+        <order>6</order>
+        <parent_ui_id>780653a1-536e-4a25-962f-d7d6a3e10bd9</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:20:48</sys_created_on>
+        <sys_id>e039bc161bf2f010afb45532604bcb22</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_updated_by>dgc_validator</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:51:11</sys_updated_on>
+        <ui_id>b331ccbe-b89d-418e-b1b9-36c4c8106060</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=e039bc161bf2f010afb45532604bcb22"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>e039bc161bf2f010afb45532604bcb22</document_key>
+        <order>0</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:20:48</sys_created_on>
+        <sys_id>2439bc161bf2f010afb45532604bcb24</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:20:48</sys_updated_on>
+        <value>x_snc_eudgc_eudgc_validation_log</value>
+        <variable display_value="Table">61e05916c31332002841b63b12d3aee4</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=e039bc161bf2f010afb45532604bcb22"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>e039bc161bf2f010afb45532604bcb22</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:20:48</sys_created_on>
+        <sys_id>ec39bc161bf2f010afb45532604bcb23</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:20:48</sys_updated_on>
+        <table>var__m_sys_hub_action_input_2de05916c31332002841b63b12d3aee1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>e039bc161bf2f010afb45532604bcb22</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:20:48</sys_created_on>
+        <sys_id>a039bc161bf2f010afb45532604bcb24</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:20:48</sys_updated_on>
+        <table>var__m_sys_hub_action_input_2de05916c31332002841b63b12d3aee1</table>
+        <value>given_name={{3e72fa59-9217-42a6-8e36-9ea7970fd5de.given_name}}^family_name={{3e72fa59-9217-42a6-8e36-9ea7970fd5de.family_name}}^date_of_birth={{3e72fa59-9217-42a6-8e36-9ea7970fd5de.date_of_birth}}^eudgc_certificate_status=valid</value>
+    </sys_element_mapping>
+    <sys_hub_flow_logic action="delete_multiple" query="flow=b785f8de1bb2f010afb45532604bcb12^sys_idNOT IN018af8961bf2f010afb45532604bcbcc,2039bc161bf2f010afb45532604bcb25,a3e6b8521bf2f010afb45532604bcb65,ae0a30961bf2f010afb45532604bcbc2,e839bc161bf2f010afb45532604bcb1a,f497f8921bf2f010afb45532604bcb4b"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">898af8961bf2f010afb45532604bcbcb</block>
+        <comment>No valid match found</comment>
+        <connected_to>780653a1-536e-4a25-962f-d7d6a3e10bd9</connected_to>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="EuDGC Validation">b785f8de1bb2f010afb45532604bcb12</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>11</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>7b01a9e0-8699-4ed1-962f-ecae7d2bde45</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:26:34</sys_created_on>
+        <sys_id>018af8961bf2f010afb45532604bcbcc</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:09</sys_updated_on>
+        <ui_id>bc9cd731-206d-47df-bf1c-e9a45bfc048e</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=018af8961bf2f010afb45532604bcbcc"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">a839bc161bf2f010afb45532604bcb24</block>
+        <comment>Test if vaccination date is before maximum days allowed (partial or complete)</comment>
+        <connected_to>780653a1-536e-4a25-962f-d7d6a3e10bd9</connected_to>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="EuDGC Validation">b785f8de1bb2f010afb45532604bcb12</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>7b01a9e0-8699-4ed1-962f-ecae7d2bde45</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:20:48</sys_created_on>
+        <sys_id>2039bc161bf2f010afb45532604bcb25</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:09</sys_updated_on>
+        <ui_id>c9d626b7-409c-4a7a-9407-afbe26c0e26f</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=2039bc161bf2f010afb45532604bcb25"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>2039bc161bf2f010afb45532604bcb25</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:20:48</sys_created_on>
+        <sys_id>2839bc161bf2f010afb45532604bcb66</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:20:48</sys_updated_on>
+        <value>DGC Vaccination</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea2</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=2039bc161bf2f010afb45532604bcb25"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>2039bc161bf2f010afb45532604bcb25</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:20:48</sys_created_on>
+        <sys_id>a439bc161bf2f010afb45532604bcb66</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:20:48</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_666e5545c3e232002841b63b12d3ae99</table>
+        <value>{{3e72fa59-9217-42a6-8e36-9ea7970fd5de.vx_dose_tot}}&gt;0^{{3e72fa59-9217-42a6-8e36-9ea7970fd5de.vx_dose_num}}&lt;{{3e72fa59-9217-42a6-8e36-9ea7970fd5de.vx_dose_tot}}^{{062c6d70-b822-4222-8553-8f42a84fdfaf.partial_vaccination_validity_date}}&gt;{{062c6d70-b822-4222-8553-8f42a84fdfaf.today}}^OR{{3e72fa59-9217-42a6-8e36-9ea7970fd5de.vx_dose_tot}}&gt;0^{{3e72fa59-9217-42a6-8e36-9ea7970fd5de.vx_dose_num}}={{3e72fa59-9217-42a6-8e36-9ea7970fd5de.vx_dose_tot}}^{{062c6d70-b822-4222-8553-8f42a84fdfaf.complete_vaccination_validity_date}}&gt;{{062c6d70-b822-4222-8553-8f42a84fdfaf.today}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>2039bc161bf2f010afb45532604bcb25</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:20:48</sys_created_on>
+        <sys_id>e039bc161bf2f010afb45532604bcb66</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:20:48</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_666e5545c3e232002841b63b12d3ae99</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">67e6b8521bf2f010afb45532604bcb64</block>
+        <comment>API responded DGC digital signature and integrity are ok</comment>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="EuDGC Validation">b785f8de1bb2f010afb45532604bcb12</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:10:54</sys_created_on>
+        <sys_id>a3e6b8521bf2f010afb45532604bcb65</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:09</sys_updated_on>
+        <ui_id>7b01a9e0-8699-4ed1-962f-ecae7d2bde45</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=a3e6b8521bf2f010afb45532604bcb65"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>a3e6b8521bf2f010afb45532604bcb65</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:10:54</sys_created_on>
+        <sys_id>6be6b8521bf2f010afb45532604bcb6b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:10:54</sys_updated_on>
+        <value>Signature is valid</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=a3e6b8521bf2f010afb45532604bcb65"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>a3e6b8521bf2f010afb45532604bcb65</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:10:54</sys_created_on>
+        <sys_id>e7e6b8521bf2f010afb45532604bcb6b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:10:54</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{3e72fa59-9217-42a6-8e36-9ea7970fd5de.status}}=valid</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>a3e6b8521bf2f010afb45532604bcb65</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:10:54</sys_created_on>
+        <sys_id>23e6b8521bf2f010afb45532604bcb6b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:10:54</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">260a30961bf2f010afb45532604bcbc2</block>
+        <comment>Test if Covid Test is negative and within maximum days allowed</comment>
+        <connected_to>780653a1-536e-4a25-962f-d7d6a3e10bd9</connected_to>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="EuDGC Validation">b785f8de1bb2f010afb45532604bcb12</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>9</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>7b01a9e0-8699-4ed1-962f-ecae7d2bde45</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:24:29</sys_created_on>
+        <sys_id>ae0a30961bf2f010afb45532604bcbc2</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:09</sys_updated_on>
+        <ui_id>c7ba0854-8858-49ff-b2b1-4bdefd6c85c2</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=ae0a30961bf2f010afb45532604bcbc2"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>ae0a30961bf2f010afb45532604bcbc2</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:24:29</sys_created_on>
+        <sys_id>260a30961bf2f010afb45532604bcbc6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:24:29</sys_updated_on>
+        <value>DGC Test</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea2</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=ae0a30961bf2f010afb45532604bcbc2"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>ae0a30961bf2f010afb45532604bcbc2</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:24:29</sys_created_on>
+        <sys_id>a20a30961bf2f010afb45532604bcbc6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:24:29</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_666e5545c3e232002841b63b12d3ae99</table>
+        <value>{{3e72fa59-9217-42a6-8e36-9ea7970fd5de.test_result}}=260415000^{{062c6d70-b822-4222-8553-8f42a84fdfaf.test_validity_date}}&gt;{{062c6d70-b822-4222-8553-8f42a84fdfaf.today}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>ae0a30961bf2f010afb45532604bcbc2</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:24:29</sys_created_on>
+        <sys_id>ea0a30961bf2f010afb45532604bcbc5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:24:29</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_666e5545c3e232002841b63b12d3ae99</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">6039bc161bf2f010afb45532604bcb1a</block>
+        <comment>Test if DGC of type Recovery and not expired</comment>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="EuDGC Validation">b785f8de1bb2f010afb45532604bcb12</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>5</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>7b01a9e0-8699-4ed1-962f-ecae7d2bde45</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:20:48</sys_created_on>
+        <sys_id>e839bc161bf2f010afb45532604bcb1a</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:09</sys_updated_on>
+        <ui_id>780653a1-536e-4a25-962f-d7d6a3e10bd9</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=e839bc161bf2f010afb45532604bcb1a"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>e839bc161bf2f010afb45532604bcb1a</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:20:48</sys_created_on>
+        <sys_id>6039bc161bf2f010afb45532604bcb1e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:20:48</sys_updated_on>
+        <value>DGC Recovery</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=e839bc161bf2f010afb45532604bcb1a"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>e839bc161bf2f010afb45532604bcb1a</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:20:48</sys_created_on>
+        <sys_id>ec39bc161bf2f010afb45532604bcb1d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:20:48</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{3e72fa59-9217-42a6-8e36-9ea7970fd5de.test_result}}=^{{3e72fa59-9217-42a6-8e36-9ea7970fd5de.vx_dose_tot}}= ^{{3e72fa59-9217-42a6-8e36-9ea7970fd5de.recovery_valid_until}}&gt;{{062c6d70-b822-4222-8553-8f42a84fdfaf.today}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>e839bc161bf2f010afb45532604bcb1a</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:20:48</sys_created_on>
+        <sys_id>2839bc161bf2f010afb45532604bcb1d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:20:48</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">7c97f8921bf2f010afb45532604bcb4a</block>
+        <comment/>
+        <connected_to>7b01a9e0-8699-4ed1-962f-ecae7d2bde45</connected_to>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="EuDGC Validation">b785f8de1bb2f010afb45532604bcb12</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>13</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:13:43</sys_created_on>
+        <sys_id>f497f8921bf2f010afb45532604bcb4b</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:09</sys_updated_on>
+        <ui_id>a445683f-afde-4090-a200-fe14badb7317</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=f497f8921bf2f010afb45532604bcb4b"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_b785f8de1bb2f010afb45532604bcb12^sys_idNOT IN183678121bf2f010afb45532604bcb4e,5c3678121bf2f010afb45532604bcb54"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_b785f8de1bb2f010afb45532604bcb12</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:07:40</sys_created_on>
+        <sys_id>183678121bf2f010afb45532604bcb4e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="EuDGC" source="x_snc_eudgc">f13eb3861bbeb010afb45532604bcbae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:07:40</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_b785f8de1bb2f010afb45532604bcb12</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:07:40</sys_created_on>
+        <sys_id>5c3678121bf2f010afb45532604bcb54</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="EuDGC" source="x_snc_eudgc">f13eb3861bbeb010afb45532604bcbae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:07:40</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=b785f8de1bb2f010afb45532604bcb12^sys_idNOT INd6efb8de1bf2f010afb45532604bcbb7"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.OncePerRecord</binding_strategy>
+        <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"d6efb8de1bf2f010afb45532604bcbb7","name":"plan","plan_signature":null}}</plan>
+        <plan_id>b785f8de1bb2f010afb45532604bcb12</plan_id>
+        <snapshot>ed2041121b36f010afb45532604bcbf5</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:08</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d6efb8de1bf2f010afb45532604bcbb7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:08</sys_updated_on>
+        <trigger display_value="">1eefb8de1bf2f010afb45532604bcbb4</trigger>
+    </sys_flow_trigger_plan>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Validate a Digital Green Certificate QrCode string according to event dates and store the end result in a table</description>
+        <internal_name>eudgc_validation</internal_name>
+        <label_cache>[{"name":"7b2b3926-8520-4bb4-a204-52b2dfd70e0a.__dont_treat_as_error__","label":"12➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","visible_in_ui":"false","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"7b2b3926-8520-4bb4-a204-52b2dfd70e0a.__action_status__","label":"12➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"7b2b3926-8520-4bb4-a204-52b2dfd70e0a.table_name","label":"12➛EuDGC Validation Log Table","reference":"x_snc_eudgc_eudgc_validation_log","reference_display":"EuDGC Validation Log","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"7b2b3926-8520-4bb4-a204-52b2dfd70e0a.record","label":"12➛EuDGC Validation Log Record","reference":"x_snc_eudgc_eudgc_validation_log","reference_display":"EuDGC Validation Log","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"4da086f6-f78d-486b-b086-1c7753e58817.__dont_treat_as_error__","label":"8➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","visible_in_ui":"false","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"4da086f6-f78d-486b-b086-1c7753e58817.__action_status__","label":"8➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"4da086f6-f78d-486b-b086-1c7753e58817.table_name","label":"8➛EuDGC Validation Log Table","reference":"x_snc_eudgc_eudgc_validation_log","reference_display":"EuDGC Validation Log","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"4da086f6-f78d-486b-b086-1c7753e58817.record","label":"8➛EuDGC Validation Log Record","reference":"x_snc_eudgc_eudgc_validation_log","reference_display":"EuDGC Validation Log","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"b331ccbe-b89d-418e-b1b9-36c4c8106060.__dont_treat_as_error__","label":"6➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","visible_in_ui":"false","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"b331ccbe-b89d-418e-b1b9-36c4c8106060.__action_status__","label":"6➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"b331ccbe-b89d-418e-b1b9-36c4c8106060.table_name","label":"6➛EuDGC Validation Log Table","reference":"x_snc_eudgc_eudgc_validation_log","reference_display":"EuDGC Validation Log","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"b331ccbe-b89d-418e-b1b9-36c4c8106060.record","label":"6➛EuDGC Validation Log Record","reference":"x_snc_eudgc_eudgc_validation_log","reference_display":"EuDGC Validation Log","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"062c6d70-b822-4222-8553-8f42a84fdfaf.test_validity_date","label":"4➛Test Validity Date","reference_display":"Test Validity Date","type":"glide_date","base_type":"glide_date","attributes":{"uiType":"glide_date","uiTypeLabel":"Date","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"465573ea-b214-4ee0-b019-1f436ffcf0f8"}},{"name":"062c6d70-b822-4222-8553-8f42a84fdfaf.complete_vaccination_validity_date","label":"4➛Complete Vaccination Validity Date","reference_display":"Complete Vaccination Validity Date","type":"glide_date","base_type":"glide_date","attributes":{"uiType":"glide_date","uiTypeLabel":"Date","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"cb7ca6b8-a2e9-4022-8c4e-33f806a47b67"}},{"name":"062c6d70-b822-4222-8553-8f42a84fdfaf.partial_vaccination_validity_date","label":"4➛Partial Vaccination Validity Date","reference_display":"Partial Vaccination Validity Date","type":"glide_date","base_type":"glide_date","attributes":{"uiType":"glide_date","uiTypeLabel":"Date","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"614905a8-d40c-4dde-8553-c3e2243b3bcb"}},{"name":"062c6d70-b822-4222-8553-8f42a84fdfaf.today","label":"4➛Today","reference_display":"Today","type":"glide_date","base_type":"glide_date","attributes":{"uiType":"glide_date","uiTypeLabel":"Date","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"cafa0d4a-13cc-4d8e-8417-3e654af79682"}},{"name":"062c6d70-b822-4222-8553-8f42a84fdfaf.__dont_treat_as_error__","label":"4➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiTypeLabel":"True/False","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"boolean","visible_in_ui":"false","action_error_output":"true","uiUniqueId":"da2c51b3-f0bd-4280-b196-0568049c6f9d"}},{"name":"062c6d70-b822-4222-8553-8f42a84fdfaf.__action_status__","label":"4➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiTypeLabel":"Object","co_type_name":"FD488d58521372f0106c62381d76562f79","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"object","action_error_output":"true","uiUniqueId":"92647426-5f3b-404f-a5ce-7f63ef8a7ff4"}},{"name":"Created_1.current.eudgc_qrcode","label":"Trigger➛EuDGC QrCode Scans Record➛EuDGC QrCode","reference":"","reference_display":"EuDGC QrCode","type":"string","base_type":"string","parent_table_name":"x_snc_eudgc_eudgc_qrcode_scans","column_name":"eudgc_qrcode"},{"name":"3e72fa59-9217-42a6-8e36-9ea7970fd5de.test_date","label":"1➛test_date","reference_display":"test_date","type":"glide_date","base_type":"glide_date","attributes":{"uiType":"glide_date","uiTypeLabel":"Date","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"484514ea-a5cc-4dd9-9b4e-d36d87f58f6a"}},{"name":"3e72fa59-9217-42a6-8e36-9ea7970fd5de.test_result_date","label":"1➛test_result_date","reference_display":"test_result_date","type":"glide_date","base_type":"glide_date","attributes":{"uiType":"glide_date","uiTypeLabel":"Date","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"6993bfae-d5cd-468d-8a74-af038caddf12"}},{"name":"3e72fa59-9217-42a6-8e36-9ea7970fd5de.test_result","label":"1➛test_result","reference_display":"test_result","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"c30e18c1-1c20-4767-bf8b-1aa9f23720e8"}},{"name":"3e72fa59-9217-42a6-8e36-9ea7970fd5de.recovery_valid_until","label":"1➛recovery_valid_until","reference_display":"recovery_valid_until","type":"glide_date","base_type":"glide_date","attributes":{"uiType":"glide_date","uiTypeLabel":"Date","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"8517396f-455f-48eb-b12e-ebc819959fd2"}},{"name":"3e72fa59-9217-42a6-8e36-9ea7970fd5de.vx_dose_num","label":"1➛vx_dose_num","reference_display":"vx_dose_num","type":"integer","base_type":"integer","attributes":{"uiType":"integer","uiTypeLabel":"Integer","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"bc3e814b-1d67-4b6d-95c5-d574388edc9f"}},{"name":"3e72fa59-9217-42a6-8e36-9ea7970fd5de.vx_dose_tot","label":"1➛vx_dose_tot","reference_display":"vx_dose_tot","type":"integer","base_type":"integer","attributes":{"uiType":"integer","uiTypeLabel":"Integer","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"07afc8d2-1e51-4299-ab9e-832686c66ae2"}},{"name":"3e72fa59-9217-42a6-8e36-9ea7970fd5de.vx_date","label":"1➛vx_date","reference_display":"vx_date","type":"glide_date","base_type":"glide_date","attributes":{"uiType":"glide_date","uiTypeLabel":"Date","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"49026d9a-e228-4ec3-b9cf-d5fbe6440ede"}},{"name":"3e72fa59-9217-42a6-8e36-9ea7970fd5de.date_of_birth","label":"1➛date_of_birth","reference_display":"date_of_birth","type":"glide_date","base_type":"glide_date","attributes":{"uiType":"glide_date","uiTypeLabel":"Date","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"6e4b0ae0-3354-49c0-bd7a-8a1010a3b761"}},{"name":"3e72fa59-9217-42a6-8e36-9ea7970fd5de.family_name","label":"1➛family_name","reference_display":"family_name","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"fe160681-d0f0-4b9d-a90f-027116d08edb"}},{"name":"3e72fa59-9217-42a6-8e36-9ea7970fd5de.given_name","label":"1➛given_name","reference_display":"given_name","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"03c32f18-ffcb-461b-a5e6-dd45c5488240"}},{"name":"3e72fa59-9217-42a6-8e36-9ea7970fd5de.status","label":"1➛status","reference_display":"status","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"3e6e0689-59c7-41c1-981e-6953084a00b8"}},{"name":"3e72fa59-9217-42a6-8e36-9ea7970fd5de.__dont_treat_as_error__","label":"1➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiTypeLabel":"True/False","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"boolean","visible_in_ui":"false","action_error_output":"true","uiUniqueId":"6644db4d-54fe-446f-9fa7-b86b67d452ae"}},{"name":"3e72fa59-9217-42a6-8e36-9ea7970fd5de.__action_status__","label":"1➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiTypeLabel":"Object","co_type_name":"FD22a2e81af972f0108774b97ab4e660f0","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"object","action_error_output":"true","uiUniqueId":"c80a75fd-76f8-4413-9f3c-4735af995f76"}},{"name":"76ef470f-8d1c-4ef6-bbc3-749d5dfcff96.record","label":"3➛EuDGC QrCode Scans Record","reference":"x_snc_eudgc_eudgc_qrcode_scans","reference_display":"EuDGC QrCode Scans","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"76ef470f-8d1c-4ef6-bbc3-749d5dfcff96.table_name","label":"3➛EuDGC QrCode Scans Table","reference":"x_snc_eudgc_eudgc_qrcode_scans","reference_display":"EuDGC QrCode Scans","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"76ef470f-8d1c-4ef6-bbc3-749d5dfcff96.__action_status__","label":"3➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"76ef470f-8d1c-4ef6-bbc3-749d5dfcff96.__dont_treat_as_error__","label":"3➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","visible_in_ui":"false","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Created_1.current","label":"Trigger➛EuDGC QrCode Scans Record","reference":"x_snc_eudgc_eudgc_qrcode_scans","reference_display":"EuDGC QrCode Scans","type":"reference","base_type":"reference","attributes":{}},{"name":"6d8b5130-038f-425a-816f-649cb184cfcf.record","label":"14➛EuDGC QrCode Scans Record","reference":"x_snc_eudgc_eudgc_qrcode_scans","reference_display":"EuDGC QrCode Scans","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"6d8b5130-038f-425a-816f-649cb184cfcf.table_name","label":"14➛EuDGC QrCode Scans Table","reference":"x_snc_eudgc_eudgc_qrcode_scans","reference_display":"EuDGC QrCode Scans","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"6d8b5130-038f-425a-816f-649cb184cfcf.__action_status__","label":"14➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"6d8b5130-038f-425a-816f-649cb184cfcf.__dont_treat_as_error__","label":"14➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","visible_in_ui":"false","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"0fe3b586-ce56-4887-8f6a-1df346bfac34.record","label":"10➛EuDGC Validation Log Record","reference":"x_snc_eudgc_eudgc_validation_log","reference_display":"EuDGC Validation Log","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"0fe3b586-ce56-4887-8f6a-1df346bfac34.table_name","label":"10➛EuDGC Validation Log Table","reference":"x_snc_eudgc_eudgc_validation_log","reference_display":"EuDGC Validation Log","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"0fe3b586-ce56-4887-8f6a-1df346bfac34.__action_status__","label":"10➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"0fe3b586-ce56-4887-8f6a-1df346bfac34.__dont_treat_as_error__","label":"10➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","visible_in_ui":"false","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}}]</label_cache>
+        <master>true</master>
+        <name>EuDGC Validation</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="EuDGC Validation">b785f8de1bb2f010afb45532604bcb12</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:05</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d5ef78de1bf2f010afb45532604bcb18</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:05</sys_updated_on>
+        <type>flow</type>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=d5ef78de1bf2f010afb45532604bcb18"/>
+    <sys_variable_value action="delete_multiple" query="document_key=d5ef78de1bf2f010afb45532604bcb18"/>
+    <sys_hub_trigger_instance action="delete_multiple" query="flow=d5ef78de1bf2f010afb45532604bcb18^sys_idNOT INb5ef78de1bf2f010afb45532604bcbb8"/>
+    <sys_hub_trigger_instance action="INSERT_OR_UPDATE">
+        <comment>A new DGC QrCode is scanned</comment>
+        <display_text/>
+        <flow display_value="EuDGC Validation">d5ef78de1bf2f010afb45532604bcb18</flow>
+        <name>Created</name>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>b5ef78de1bf2f010afb45532604bcbb8</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:09</sys_updated_on>
+        <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
+        <trigger_inputs/>
+        <trigger_outputs/>
+        <trigger_type>record_create</trigger_type>
+    </sys_hub_trigger_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=b5ef78de1bf2f010afb45532604bcbb8"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>b5ef78de1bf2f010afb45532604bcbb8</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>75ef78de1bf2f010afb45532604bcbba</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <value>x_snc_eudgc_eudgc_qrcode_scans</value>
+        <variable display_value="Table">cfca92e0c31322002841b63b12d3ae00</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>b5ef78de1bf2f010afb45532604bcbb8</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>b1ef78de1bf2f010afb45532604bcbba</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <value>^EQ</value>
+        <variable display_value="Condition">66aadea0c31322002841b63b12d3aebf</variable>
+    </sys_variable_value>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=d5ef78de1bf2f010afb45532604bcb18^sys_idNOT IN59ef78de1bf2f010afb45532604bcb19"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>d5ef78de1bf2f010afb45532604bcb18</id>
+        <name>EuDGC Validation</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:05</sys_created_on>
+        <sys_id>59ef78de1bf2f010afb45532604bcb19</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:05</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_hub_flow_input action="delete_multiple" query="model=d5ef78de1bf2f010afb45532604bcb18^sys_idNOT INa1ef78de1bf2f010afb45532604bcb3f,adef78de1bf2f010afb45532604bcb1a"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="EuDGC Validation">d5ef78de1bf2f010afb45532604bcb18</model>
+        <model_id>d5ef78de1bf2f010afb45532604bcb18</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_d5ef78de1bf2f010afb45532604bcb18</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:05</sys_created_on>
+        <sys_id>a1ef78de1bf2f010afb45532604bcb3f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:05</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id,uiTypeLabel=Document ID</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="EuDGC Validation">d5ef78de1bf2f010afb45532604bcb18</model>
+        <model_id>d5ef78de1bf2f010afb45532604bcb18</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_d5ef78de1bf2f010afb45532604bcb18</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:05</sys_created_on>
+        <sys_id>adef78de1bf2f010afb45532604bcb1a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:05</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_instance action="delete_multiple" query="flow=d5ef78de1bf2f010afb45532604bcb18^sys_idNOT IN61ef78de1bf2f010afb45532604bcb85,71ef78de1bf2f010afb45532604bcba7,adef78de1bf2f010afb45532604bcb8c,b1ef78de1bf2f010afb45532604bcbac,b5ef78de1bf2f010afb45532604bcbb6,b9ef78de1bf2f010afb45532604bcba1,f1ef78de1bf2f010afb45532604bcbb1,f9ef78de1bf2f010afb45532604bcb99"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="EuDGC_Validation_API">d2a2e81a1b72f010afb45532604bcbbc</action_type>
+        <action_type_parent display_value="EuDGC_Validation_API">e8b0a8561b72f010afb45532604bcb91</action_type_parent>
+        <comment>Pass the scanned QrCode string to the validation API</comment>
+        <compiled_snapshot>d2a2e81a1b72f010afb45532604bcbbc</compiled_snapshot>
+        <display_text/>
+        <flow display_value="EuDGC Validation">d5ef78de1bf2f010afb45532604bcb18</flow>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:05</sys_created_on>
+        <sys_id>61ef78de1bf2f010afb45532604bcb85</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <ui_id>3e72fa59-9217-42a6-8e36-9ea7970fd5de</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=61ef78de1bf2f010afb45532604bcb85"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>61ef78de1bf2f010afb45532604bcb85</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>29ef78de1bf2f010afb45532604bcb86</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <value/>
+        <variable display_value="hc1_qrcode">e6a2e81a1b72f010afb45532604bcbbf</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=61ef78de1bf2f010afb45532604bcb85"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>hc1_qrcode</field>
+        <id>61ef78de1bf2f010afb45532604bcb85</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>a5ef78de1bf2f010afb45532604bcb86</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <table>var__m_sys_hub_action_input_d2a2e81a1b72f010afb45532604bcbbc</table>
+        <value>{{Created_1.current.eudgc_qrcode}}</value>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <comment>Log a valid DGC for the user</comment>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="EuDGC Validation">d5ef78de1bf2f010afb45532604bcb18</flow>
+        <order>8</order>
+        <parent_ui_id>c9d626b7-409c-4a7a-9407-afbe26c0e26f</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>71ef78de1bf2f010afb45532604bcba7</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <ui_id>4da086f6-f78d-486b-b086-1c7753e58817</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=71ef78de1bf2f010afb45532604bcba7"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>71ef78de1bf2f010afb45532604bcba7</document_key>
+        <order>0</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>75ef78de1bf2f010afb45532604bcba8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <value>x_snc_eudgc_eudgc_validation_log</value>
+        <variable display_value="Table">61e05916c31332002841b63b12d3aee4</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=71ef78de1bf2f010afb45532604bcba7"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>71ef78de1bf2f010afb45532604bcba7</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>31ef78de1bf2f010afb45532604bcba8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <table>var__m_sys_hub_action_input_2de05916c31332002841b63b12d3aee1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>71ef78de1bf2f010afb45532604bcba7</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>f1ef78de1bf2f010afb45532604bcba8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <table>var__m_sys_hub_action_input_2de05916c31332002841b63b12d3aee1</table>
+        <value>given_name={{3e72fa59-9217-42a6-8e36-9ea7970fd5de.given_name}}^family_name={{3e72fa59-9217-42a6-8e36-9ea7970fd5de.family_name}}^date_of_birth={{3e72fa59-9217-42a6-8e36-9ea7970fd5de.date_of_birth}}^eudgc_certificate_status=valid</value>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <comment>Delete QrCode (we don't want to store all DGC data)</comment>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="EuDGC Validation">d5ef78de1bf2f010afb45532604bcb18</flow>
+        <order>3</order>
+        <parent_ui_id>7b01a9e0-8699-4ed1-962f-ecae7d2bde45</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>adef78de1bf2f010afb45532604bcb8c</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <ui_id>76ef470f-8d1c-4ef6-bbc3-749d5dfcff96</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=adef78de1bf2f010afb45532604bcb8c"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>adef78de1bf2f010afb45532604bcb8c</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>bdef78de1bf2f010afb45532604bcb8e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <value>x_snc_eudgc_eudgc_qrcode_scans</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>adef78de1bf2f010afb45532604bcb8c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>f9ef78de1bf2f010afb45532604bcb8e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <value>eudgc_qrcode=--Processed--^signature_status=valid^status_icon=e37590961b32f010afb45532604bcbd1</value>
+        <variable display_value="Fields">02d01916c31332002841b63b12d3aeee</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=adef78de1bf2f010afb45532604bcb8c"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>adef78de1bf2f010afb45532604bcb8c</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>b5ef78de1bf2f010afb45532604bcb8e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{Created_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>adef78de1bf2f010afb45532604bcb8c</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>f1ef78de1bf2f010afb45532604bcb8e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>adef78de1bf2f010afb45532604bcb8c</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>79ef78de1bf2f010afb45532604bcb8e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <comment>Log a valid DGC for the user</comment>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="EuDGC Validation">d5ef78de1bf2f010afb45532604bcb18</flow>
+        <order>10</order>
+        <parent_ui_id>c7ba0854-8858-49ff-b2b1-4bdefd6c85c2</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>b1ef78de1bf2f010afb45532604bcbac</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <ui_id>0fe3b586-ce56-4887-8f6a-1df346bfac34</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=b1ef78de1bf2f010afb45532604bcbac"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>b1ef78de1bf2f010afb45532604bcbac</document_key>
+        <order>0</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>b5ef78de1bf2f010afb45532604bcbad</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <value>x_snc_eudgc_eudgc_validation_log</value>
+        <variable display_value="Table">61e05916c31332002841b63b12d3aee4</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=b1ef78de1bf2f010afb45532604bcbac"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>b1ef78de1bf2f010afb45532604bcbac</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>71ef78de1bf2f010afb45532604bcbad</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <table>var__m_sys_hub_action_input_2de05916c31332002841b63b12d3aee1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>b1ef78de1bf2f010afb45532604bcbac</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>35ef78de1bf2f010afb45532604bcbad</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <table>var__m_sys_hub_action_input_2de05916c31332002841b63b12d3aee1</table>
+        <value>given_name={{3e72fa59-9217-42a6-8e36-9ea7970fd5de.given_name}}^family_name={{3e72fa59-9217-42a6-8e36-9ea7970fd5de.family_name}}^date_of_birth={{3e72fa59-9217-42a6-8e36-9ea7970fd5de.date_of_birth}}^eudgc_certificate_status=valid</value>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <comment>Delete QrCode (we don't want to store all DGC data) and report signature is Invalid</comment>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="EuDGC Validation">d5ef78de1bf2f010afb45532604bcb18</flow>
+        <order>14</order>
+        <parent_ui_id>a445683f-afde-4090-a200-fe14badb7317</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>b5ef78de1bf2f010afb45532604bcbb6</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <ui_id>6d8b5130-038f-425a-816f-649cb184cfcf</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=b5ef78de1bf2f010afb45532604bcbb6"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>b5ef78de1bf2f010afb45532604bcbb6</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>b1ef78de1bf2f010afb45532604bcbb8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <value>x_snc_eudgc_eudgc_qrcode_scans</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>b5ef78de1bf2f010afb45532604bcbb6</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>fdef78de1bf2f010afb45532604bcbb7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <value>eudgc_qrcode=--Processed--^signature_status=invalid^status_icon=a875d0961b32f010afb45532604bcb30</value>
+        <variable display_value="Fields">02d01916c31332002841b63b12d3aeee</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=b5ef78de1bf2f010afb45532604bcbb6"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>b5ef78de1bf2f010afb45532604bcbb6</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>b9ef78de1bf2f010afb45532604bcbb7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{Created_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>b5ef78de1bf2f010afb45532604bcbb6</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>f5ef78de1bf2f010afb45532604bcbb7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>b5ef78de1bf2f010afb45532604bcbb6</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>7def78de1bf2f010afb45532604bcbb7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <comment>Log a valid DGC for the user</comment>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="EuDGC Validation">d5ef78de1bf2f010afb45532604bcb18</flow>
+        <order>6</order>
+        <parent_ui_id>780653a1-536e-4a25-962f-d7d6a3e10bd9</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>b9ef78de1bf2f010afb45532604bcba1</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <ui_id>b331ccbe-b89d-418e-b1b9-36c4c8106060</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=b9ef78de1bf2f010afb45532604bcba1"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>b9ef78de1bf2f010afb45532604bcba1</document_key>
+        <order>0</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>b1ef78de1bf2f010afb45532604bcba3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <value>x_snc_eudgc_eudgc_validation_log</value>
+        <variable display_value="Table">61e05916c31332002841b63b12d3aee4</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=b9ef78de1bf2f010afb45532604bcba1"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>b9ef78de1bf2f010afb45532604bcba1</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>7def78de1bf2f010afb45532604bcba2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <table>var__m_sys_hub_action_input_2de05916c31332002841b63b12d3aee1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>b9ef78de1bf2f010afb45532604bcba1</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>31ef78de1bf2f010afb45532604bcba3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <table>var__m_sys_hub_action_input_2de05916c31332002841b63b12d3aee1</table>
+        <value>given_name={{3e72fa59-9217-42a6-8e36-9ea7970fd5de.given_name}}^family_name={{3e72fa59-9217-42a6-8e36-9ea7970fd5de.family_name}}^date_of_birth={{3e72fa59-9217-42a6-8e36-9ea7970fd5de.date_of_birth}}^eudgc_certificate_status=valid</value>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <comment>Log an invalid DGC for the user</comment>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="EuDGC Validation">d5ef78de1bf2f010afb45532604bcb18</flow>
+        <order>12</order>
+        <parent_ui_id>bc9cd731-206d-47df-bf1c-e9a45bfc048e</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>f1ef78de1bf2f010afb45532604bcbb1</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <ui_id>7b2b3926-8520-4bb4-a204-52b2dfd70e0a</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=f1ef78de1bf2f010afb45532604bcbb1"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>f1ef78de1bf2f010afb45532604bcbb1</document_key>
+        <order>0</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>f5ef78de1bf2f010afb45532604bcbb2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <value>x_snc_eudgc_eudgc_validation_log</value>
+        <variable display_value="Table">61e05916c31332002841b63b12d3aee4</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=f1ef78de1bf2f010afb45532604bcbb1"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>f1ef78de1bf2f010afb45532604bcbb1</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>b1ef78de1bf2f010afb45532604bcbb2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <table>var__m_sys_hub_action_input_2de05916c31332002841b63b12d3aee1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>f1ef78de1bf2f010afb45532604bcbb1</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>75ef78de1bf2f010afb45532604bcbb2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <table>var__m_sys_hub_action_input_2de05916c31332002841b63b12d3aee1</table>
+        <value>given_name={{3e72fa59-9217-42a6-8e36-9ea7970fd5de.given_name}}^family_name={{3e72fa59-9217-42a6-8e36-9ea7970fd5de.family_name}}^date_of_birth={{3e72fa59-9217-42a6-8e36-9ea7970fd5de.date_of_birth}}^eudgc_certificate_status=invalid</value>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="EuDGC Date Rules">337d18521b72f010afb45532604bcbdd</action_type>
+        <action_type_parent display_value="EuDGC Date Rules">c31c10de1b32f010afb45532604bcbd2</action_type_parent>
+        <comment>Get Validity dates based on DGC rules</comment>
+        <compiled_snapshot>337d18521b72f010afb45532604bcbdd</compiled_snapshot>
+        <display_text/>
+        <flow display_value="EuDGC Validation">d5ef78de1bf2f010afb45532604bcb18</flow>
+        <order>4</order>
+        <parent_ui_id>7b01a9e0-8699-4ed1-962f-ecae7d2bde45</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>f9ef78de1bf2f010afb45532604bcb99</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <ui_id>062c6d70-b822-4222-8553-8f42a84fdfaf</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=f9ef78de1bf2f010afb45532604bcb99"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>f9ef78de1bf2f010afb45532604bcb99</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>b5ef78de1bf2f010afb45532604bcb9b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <value/>
+        <variable display_value="Vaccination Date">737d18521b72f010afb45532604bcbe8</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>f9ef78de1bf2f010afb45532604bcb99</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>f1ef78de1bf2f010afb45532604bcb9b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <value/>
+        <variable display_value="Test Date">377d18521b72f010afb45532604bcbe0</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=f9ef78de1bf2f010afb45532604bcb99"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>test_date</field>
+        <id>f9ef78de1bf2f010afb45532604bcb99</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>71ef78de1bf2f010afb45532604bcb9b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <table>var__m_sys_hub_action_input_337d18521b72f010afb45532604bcbdd</table>
+        <value>{{3e72fa59-9217-42a6-8e36-9ea7970fd5de.test_date}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>vaccination_date</field>
+        <id>f9ef78de1bf2f010afb45532604bcb99</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:06</sys_created_on>
+        <sys_id>bdef78de1bf2f010afb45532604bcb9a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:06</sys_updated_on>
+        <table>var__m_sys_hub_action_input_337d18521b72f010afb45532604bcbdd</table>
+        <value>{{3e72fa59-9217-42a6-8e36-9ea7970fd5de.vx_date}}</value>
+    </sys_element_mapping>
+    <sys_hub_flow_logic action="delete_multiple" query="flow=d5ef78de1bf2f010afb45532604bcb18^sys_idNOT IN21ef78de1bf2f010afb45532604bcb54,29ef78de1bf2f010afb45532604bcb68,61ef78de1bf2f010afb45532604bcb6c,69ef78de1bf2f010afb45532604bcb57,adef78de1bf2f010afb45532604bcb4c,adef78de1bf2f010afb45532604bcb6e"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">6039bc161bf2f010afb45532604bcb1a</block>
+        <comment>Test if DGC of type Recovery and not expired</comment>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="EuDGC Validation">d5ef78de1bf2f010afb45532604bcb18</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>5</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>7b01a9e0-8699-4ed1-962f-ecae7d2bde45</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:05</sys_created_on>
+        <sys_id>21ef78de1bf2f010afb45532604bcb54</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:05</sys_updated_on>
+        <ui_id>780653a1-536e-4a25-962f-d7d6a3e10bd9</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=21ef78de1bf2f010afb45532604bcb54"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>21ef78de1bf2f010afb45532604bcb54</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:05</sys_created_on>
+        <sys_id>adef78de1bf2f010afb45532604bcb56</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:05</sys_updated_on>
+        <value>DGC Recovery</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=21ef78de1bf2f010afb45532604bcb54"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>21ef78de1bf2f010afb45532604bcb54</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:05</sys_created_on>
+        <sys_id>2def78de1bf2f010afb45532604bcb56</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:05</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{3e72fa59-9217-42a6-8e36-9ea7970fd5de.test_result}}=^{{3e72fa59-9217-42a6-8e36-9ea7970fd5de.vx_dose_tot}}= ^{{3e72fa59-9217-42a6-8e36-9ea7970fd5de.recovery_valid_until}}&gt;{{062c6d70-b822-4222-8553-8f42a84fdfaf.today}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>21ef78de1bf2f010afb45532604bcb54</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:05</sys_created_on>
+        <sys_id>69ef78de1bf2f010afb45532604bcb56</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:05</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">260a30961bf2f010afb45532604bcbc2</block>
+        <comment>Test if Covid Test is negative and within maximum days allowed</comment>
+        <connected_to>780653a1-536e-4a25-962f-d7d6a3e10bd9</connected_to>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="EuDGC Validation">d5ef78de1bf2f010afb45532604bcb18</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>9</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>7b01a9e0-8699-4ed1-962f-ecae7d2bde45</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:05</sys_created_on>
+        <sys_id>29ef78de1bf2f010afb45532604bcb68</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:05</sys_updated_on>
+        <ui_id>c7ba0854-8858-49ff-b2b1-4bdefd6c85c2</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=29ef78de1bf2f010afb45532604bcb68"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>29ef78de1bf2f010afb45532604bcb68</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:05</sys_created_on>
+        <sys_id>a5ef78de1bf2f010afb45532604bcb6b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:05</sys_updated_on>
+        <value>DGC Test</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea2</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=29ef78de1bf2f010afb45532604bcb68"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>29ef78de1bf2f010afb45532604bcb68</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:05</sys_created_on>
+        <sys_id>25ef78de1bf2f010afb45532604bcb6b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:05</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_666e5545c3e232002841b63b12d3ae99</table>
+        <value>{{3e72fa59-9217-42a6-8e36-9ea7970fd5de.test_result}}=260415000^{{062c6d70-b822-4222-8553-8f42a84fdfaf.test_validity_date}}&gt;{{062c6d70-b822-4222-8553-8f42a84fdfaf.today}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>29ef78de1bf2f010afb45532604bcb68</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:05</sys_created_on>
+        <sys_id>61ef78de1bf2f010afb45532604bcb6b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:05</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_666e5545c3e232002841b63b12d3ae99</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">898af8961bf2f010afb45532604bcbcb</block>
+        <comment>No valid match found</comment>
+        <connected_to>780653a1-536e-4a25-962f-d7d6a3e10bd9</connected_to>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="EuDGC Validation">d5ef78de1bf2f010afb45532604bcb18</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>11</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>7b01a9e0-8699-4ed1-962f-ecae7d2bde45</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:05</sys_created_on>
+        <sys_id>61ef78de1bf2f010afb45532604bcb6c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:05</sys_updated_on>
+        <ui_id>bc9cd731-206d-47df-bf1c-e9a45bfc048e</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=61ef78de1bf2f010afb45532604bcb6c"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">a839bc161bf2f010afb45532604bcb24</block>
+        <comment>Test if vaccination date is before maximum days allowed (partial or complete)</comment>
+        <connected_to>780653a1-536e-4a25-962f-d7d6a3e10bd9</connected_to>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="EuDGC Validation">d5ef78de1bf2f010afb45532604bcb18</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>7b01a9e0-8699-4ed1-962f-ecae7d2bde45</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:05</sys_created_on>
+        <sys_id>69ef78de1bf2f010afb45532604bcb57</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:05</sys_updated_on>
+        <ui_id>c9d626b7-409c-4a7a-9407-afbe26c0e26f</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=69ef78de1bf2f010afb45532604bcb57"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>69ef78de1bf2f010afb45532604bcb57</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:05</sys_created_on>
+        <sys_id>e9ef78de1bf2f010afb45532604bcb67</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:05</sys_updated_on>
+        <value>DGC Vaccination</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea2</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=69ef78de1bf2f010afb45532604bcb57"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>69ef78de1bf2f010afb45532604bcb57</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:05</sys_created_on>
+        <sys_id>69ef78de1bf2f010afb45532604bcb67</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:05</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_666e5545c3e232002841b63b12d3ae99</table>
+        <value>{{3e72fa59-9217-42a6-8e36-9ea7970fd5de.vx_dose_tot}}&gt;0^{{3e72fa59-9217-42a6-8e36-9ea7970fd5de.vx_dose_num}}&lt;{{3e72fa59-9217-42a6-8e36-9ea7970fd5de.vx_dose_tot}}^{{062c6d70-b822-4222-8553-8f42a84fdfaf.partial_vaccination_validity_date}}&gt;{{062c6d70-b822-4222-8553-8f42a84fdfaf.today}}^OR{{3e72fa59-9217-42a6-8e36-9ea7970fd5de.vx_dose_tot}}&gt;0^{{3e72fa59-9217-42a6-8e36-9ea7970fd5de.vx_dose_num}}={{3e72fa59-9217-42a6-8e36-9ea7970fd5de.vx_dose_tot}}^{{062c6d70-b822-4222-8553-8f42a84fdfaf.complete_vaccination_validity_date}}&gt;{{062c6d70-b822-4222-8553-8f42a84fdfaf.today}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>69ef78de1bf2f010afb45532604bcb57</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:05</sys_created_on>
+        <sys_id>edef78de1bf2f010afb45532604bcb5a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:05</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_666e5545c3e232002841b63b12d3ae99</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">67e6b8521bf2f010afb45532604bcb64</block>
+        <comment>API responded DGC digital signature and integrity are ok</comment>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="EuDGC Validation">d5ef78de1bf2f010afb45532604bcb18</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:05</sys_created_on>
+        <sys_id>adef78de1bf2f010afb45532604bcb4c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:05</sys_updated_on>
+        <ui_id>7b01a9e0-8699-4ed1-962f-ecae7d2bde45</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=adef78de1bf2f010afb45532604bcb4c"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>adef78de1bf2f010afb45532604bcb4c</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:05</sys_created_on>
+        <sys_id>edef78de1bf2f010afb45532604bcb52</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:05</sys_updated_on>
+        <value>Signature is valid</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=adef78de1bf2f010afb45532604bcb4c"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>adef78de1bf2f010afb45532604bcb4c</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:05</sys_created_on>
+        <sys_id>6def78de1bf2f010afb45532604bcb52</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:05</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{3e72fa59-9217-42a6-8e36-9ea7970fd5de.status}}=valid</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>adef78de1bf2f010afb45532604bcb4c</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:05</sys_created_on>
+        <sys_id>a5ef78de1bf2f010afb45532604bcb52</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:05</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">7c97f8921bf2f010afb45532604bcb4a</block>
+        <comment/>
+        <connected_to>7b01a9e0-8699-4ed1-962f-ecae7d2bde45</connected_to>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="EuDGC Validation">d5ef78de1bf2f010afb45532604bcb18</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>13</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:05</sys_created_on>
+        <sys_id>adef78de1bf2f010afb45532604bcb6e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:05</sys_updated_on>
+        <ui_id>a445683f-afde-4090-a200-fe14badb7317</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=adef78de1bf2f010afb45532604bcb6e"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_d5ef78de1bf2f010afb45532604bcb18^sys_idNOT INa1ef78de1bf2f010afb45532604bcb3b,adef78de1bf2f010afb45532604bcb45"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_d5ef78de1bf2f010afb45532604bcb18</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:05</sys_created_on>
+        <sys_id>a1ef78de1bf2f010afb45532604bcb3b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="EuDGC" source="x_snc_eudgc">f13eb3861bbeb010afb45532604bcbae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:05</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_d5ef78de1bf2f010afb45532604bcb18</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 20:50:05</sys_created_on>
+        <sys_id>adef78de1bf2f010afb45532604bcb45</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="EuDGC" source="x_snc_eudgc">f13eb3861bbeb010afb45532604bcbae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 20:50:05</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_hub_flow action="update">
+        <sys_id>b785f8de1bb2f010afb45532604bcb12</sys_id>
+        <latest_snapshot>d5ef78de1bf2f010afb45532604bcb18</latest_snapshot>
+    </sys_hub_flow>
+</record_update>

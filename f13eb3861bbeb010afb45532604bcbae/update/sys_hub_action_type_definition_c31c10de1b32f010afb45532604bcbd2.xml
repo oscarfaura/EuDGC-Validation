@@ -27,7 +27,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c31c10de1b32f010afb45532604bcbd2</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>EuDGC Date Rules</sys_name>
         <sys_overrides/>
         <sys_package display_value="EuDGC" source="x_snc_eudgc">f13eb3861bbeb010afb45532604bcbae</sys_package>
@@ -35,7 +35,7 @@
         <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_c31c10de1b32f010afb45532604bcbd2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-09-26 18:19:48</sys_updated_on>
+        <sys_updated_on>2021-09-26 20:44:19</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -216,10 +216,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-09-26 18:16:25</sys_created_on>
         <sys_id>2ebc94121b72f010afb45532604bcbad</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-09-26 18:16:26</sys_updated_on>
+        <sys_updated_on>2021-09-26 20:43:09</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=2ebc94121b72f010afb45532604bcbad"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -258,27 +258,35 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-09-26 18:16:26</sys_created_on>
         <sys_id>f2bc94121b72f010afb45532604bcbf9</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-09-26 18:16:26</sys_updated_on>
+        <sys_updated_on>2021-09-26 20:43:09</sys_updated_on>
         <value>(function execute(inputs, outputs) {
   
   var Today = new GlideDate();
   
-  var TestValidityDate = new GlideDateTime(inputs.t_date);
-  TestValidityDate.addDaysUTC(5);
+  if(inputs.t_date) {
+    var TestValidityDate = new GlideDateTime(inputs.t_date);
+    TestValidityDate.addDaysUTC(5);
+    outputs.testvaliditydate = TestValidityDate.getDate();
+  }
+  else outputs.testvaliditydate = '';
   
-  var PartialVaccineValidityDate = new GlideDateTime(inputs.v_date);
-  PartialVaccineValidityDate.addDaysUTC(45);
-  
-  var CompleteVaccineValidityDate = new GlideDateTime(inputs.v_date);
-  CompleteVaccineValidityDate.addDaysUTC(270);
+  if( inputs.v_date ) {
+    var PartialVaccineValidityDate = new GlideDateTime(inputs.v_date);
+    PartialVaccineValidityDate.addDaysUTC(45);
+    outputs.partialvaccinevaliditydate = PartialVaccineValidityDate.getDate();
 
+    var CompleteVaccineValidityDate = new GlideDateTime(inputs.v_date);
+    CompleteVaccineValidityDate.addDaysUTC(270);
+    outputs.copmpletevaccinevaliditydate = CompleteVaccineValidityDate.getDate();
+  }
+  else {
+      outputs.copmpletevaccinevaliditydate = '';
+      outputs.partialvaccinevaliditydate = '';
+  }
   
   outputs.today = Today;
-  outputs.testvaliditydate = TestValidityDate.getDate();
-  outputs.partialvaccinevaliditydate = PartialVaccineValidityDate.getDate();
-  outputs.copmpletevaccinevaliditydate = CompleteVaccineValidityDate.getDate();
   
 })(inputs, outputs);
 </value>
@@ -1818,17 +1826,17 @@
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
         <action_id display_value="EuDGC Date Rules">c31c10de1b32f010afb45532604bcbd2</action_id>
         <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"948d98521b72f010afb45532604bcb4f","name":"plan","plan_signature":null}}</plan>
-        <snapshot>088d58521b72f010afb45532604bcbbf</snapshot>
+        <snapshot>499e305e1bf2f010afb45532604bcb25</snapshot>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-09-26 18:19:49</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>948d98521b72f010afb45532604bcb4f</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-09-26 18:19:49</sys_updated_on>
+        <sys_updated_on>2021-09-26 20:44:20</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>package_private</access>
@@ -2044,10 +2052,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-09-26 18:19:47</sys_created_on>
         <sys_id>777d18521b72f010afb45532604bcbf0</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-09-26 18:19:47</sys_updated_on>
+        <sys_updated_on>2021-09-26 20:44:19</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=777d18521b72f010afb45532604bcbf0"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -2114,27 +2122,35 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-09-26 18:19:47</sys_created_on>
         <sys_id>f77d58521b72f010afb45532604bcb75</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-09-26 18:19:47</sys_updated_on>
+        <sys_updated_on>2021-09-26 20:44:19</sys_updated_on>
         <value>(function execute(inputs, outputs) {
   
   var Today = new GlideDate();
   
-  var TestValidityDate = new GlideDateTime(inputs.t_date);
-  TestValidityDate.addDaysUTC(5);
+  if(inputs.t_date) {
+    var TestValidityDate = new GlideDateTime(inputs.t_date);
+    TestValidityDate.addDaysUTC(5);
+    outputs.testvaliditydate = TestValidityDate.getDate();
+  }
+  else outputs.testvaliditydate = '';
   
-  var PartialVaccineValidityDate = new GlideDateTime(inputs.v_date);
-  PartialVaccineValidityDate.addDaysUTC(45);
-  
-  var CompleteVaccineValidityDate = new GlideDateTime(inputs.v_date);
-  CompleteVaccineValidityDate.addDaysUTC(270);
+  if( inputs.v_date ) {
+    var PartialVaccineValidityDate = new GlideDateTime(inputs.v_date);
+    PartialVaccineValidityDate.addDaysUTC(45);
+    outputs.partialvaccinevaliditydate = PartialVaccineValidityDate.getDate();
 
+    var CompleteVaccineValidityDate = new GlideDateTime(inputs.v_date);
+    CompleteVaccineValidityDate.addDaysUTC(270);
+    outputs.copmpletevaccinevaliditydate = CompleteVaccineValidityDate.getDate();
+  }
+  else {
+      outputs.copmpletevaccinevaliditydate = '';
+      outputs.partialvaccinevaliditydate = '';
+  }
   
   outputs.today = Today;
-  outputs.testvaliditydate = TestValidityDate.getDate();
-  outputs.partialvaccinevaliditydate = PartialVaccineValidityDate.getDate();
-  outputs.copmpletevaccinevaliditydate = CompleteVaccineValidityDate.getDate();
   
 })(inputs, outputs);
 </value>
