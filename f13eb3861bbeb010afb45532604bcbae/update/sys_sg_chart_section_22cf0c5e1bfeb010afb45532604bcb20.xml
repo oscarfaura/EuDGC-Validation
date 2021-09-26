@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_chart_section">
+    <sys_sg_chart_section action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <charts>eb4f4c5e1bfeb010afb45532604bcb60,020f4c5e1bfeb010afb45532604bcb46</charts>
+        <data_item/>
+        <hide_header>false</hide_header>
+        <hide_section_if_empty>false</hide_section_if_empty>
+        <is_hidden_preference_name/>
+        <orientation>horizontal</orientation>
+        <required_roles/>
+        <sys_class_name>sys_sg_chart_section</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 17:19:53</sys_created_on>
+        <sys_id>22cf0c5e1bfeb010afb45532604bcb20</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Total Scans</sys_name>
+        <sys_package display_value="EuDGC" source="x_snc_eudgc">f13eb3861bbeb010afb45532604bcbae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_update_name>sys_sg_chart_section_22cf0c5e1bfeb010afb45532604bcb20</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 17:19:53</sys_updated_on>
+        <table/>
+        <title>Total Scans</title>
+        <type>single_score</type>
+        <visible_condition/>
+    </sys_sg_chart_section>
+</record_update>

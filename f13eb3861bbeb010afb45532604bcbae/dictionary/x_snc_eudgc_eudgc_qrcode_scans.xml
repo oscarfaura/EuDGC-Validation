@@ -7,6 +7,6 @@
                 <element inactive_on_update="false" label="Valid" value="valid"/>
             </choice>
         </element>
-        <element attributes="edge_encryption_enabled=true" label="Status Icon" max_length="40" name="status_icon" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Status Icon" max_length="40" name="status_icon" type="user_image"/>
     </element>
 </database>

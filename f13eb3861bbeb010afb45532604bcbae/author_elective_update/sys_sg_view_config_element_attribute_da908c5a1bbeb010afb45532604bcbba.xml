@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_config_element_attribute">
+    <sys_sg_view_config_element_attribute action="DELETE">
+        <description/>
+        <name display_value="FieldValue">c2eed5c2b7321010df65f6efce11a9cf</name>
+        <sys_class_name>sys_sg_view_config_element_attribute</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 16:13:31</sys_created_on>
+        <sys_id>da908c5a1bbeb010afb45532604bcbba</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>c2eed5c2b7321010df65f6efce11a9cf</sys_name>
+        <sys_package display_value="EuDGC" source="x_snc_eudgc">f13eb3861bbeb010afb45532604bcbae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_update_name>sys_sg_view_config_element_attribute_da908c5a1bbeb010afb45532604bcbba</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 16:13:31</sys_updated_on>
+        <translated_value/>
+        <value>status_icon</value>
+        <view_config_element display_value="status_icon-FieldValue">16908c5a1bbeb010afb45532604bcbb9</view_config_element>
+    </sys_sg_view_config_element_attribute>
+    <sys_translated_text action="DELETE" query="documentkey=da908c5a1bbeb010afb45532604bcbba"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</application>
+        <file_path/>
+        <instance_id>64549ef1db323010387021c4059619e7</instance_id>
+        <instance_name>eudgcdemo</instance_name>
+        <name>sys_sg_view_config_element_attribute_da908c5a1bbeb010afb45532604bcbba</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_config_element_attribute"><sys_sg_view_config_element_attribute action="INSERT_OR_UPDATE"><description/><name display_value="FieldValue">c2eed5c2b7321010df65f6efce11a9cf</name><sys_class_name>sys_sg_view_config_element_attribute</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-09-26 16:13:31</sys_created_on><sys_id>da908c5a1bbeb010afb45532604bcbba</sys_id><sys_mod_count>0</sys_mod_count><sys_name>c2eed5c2b7321010df65f6efce11a9cf</sys_name><sys_package display_value="EuDGC" source="x_snc_eudgc">f13eb3861bbeb010afb45532604bcbae</sys_package><sys_policy/><sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope><sys_update_name>sys_sg_view_config_element_attribute_da908c5a1bbeb010afb45532604bcbba</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-09-26 16:13:31</sys_updated_on><translated_value/><value>status_icon</value><view_config_element display_value="status_icon-FieldValue">16908c5a1bbeb010afb45532604bcbb9</view_config_element></sys_sg_view_config_element_attribute><sys_translated_text action="delete_multiple" query="documentkey=da908c5a1bbeb010afb45532604bcbba"/></record_update>]]></payload>
+        <payload_hash>817423015</payload_hash>
+        <record_name>c2eed5c2b7321010df65f6efce11a9cf</record_name>
+        <reverted_from/>
+        <source>3d3eb3861bbeb010afb45532604bcbb0</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 16:13:31</sys_created_on>
+        <sys_id>92908c5a1bbeb010afb45532604bcbbc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17c22e209ab0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 16:13:31</sys_updated_on>
+        <type>Card element attribute</type>
+        <update_guid>da908c5a80beb01085c279d66ca145bb</update_guid>
+        <update_guid_history>da908c5a80beb01085c279d66ca145bb:817423015</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 16:56:59</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_view_config_element_attribute">sys_sg_view_config_element_attribute</sys_db_object>
+        <sys_id>65db043b31ae468ca5b7dc462a9ad781</sys_id>
+        <sys_metadata>da908c5a1bbeb010afb45532604bcbba</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>c2eed5c2b7321010df65f6efce11a9cf</sys_name>
+        <sys_package display_value="EuDGC" source="x_snc_eudgc">f13eb3861bbeb010afb45532604bcbae</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_scope_delete display_value="">b6227cd5e08d4b03977fa778f245e2e9</sys_scope_delete>
+        <sys_update_name>sys_sg_view_config_element_attribute_da908c5a1bbeb010afb45532604bcbba</sys_update_name>
+        <sys_update_version display_value="sys_sg_view_config_element_attribute_da908c5a1bbeb010afb45532604bcbba">92908c5a1bbeb010afb45532604bcbbc</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 16:56:59</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

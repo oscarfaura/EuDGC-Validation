@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_applet_launcher_m2m_section">
+    <sys_sg_applet_launcher_m2m_section action="DELETE">
+        <applet_launcher display_value="EuDGC Scan">0a90c41a1bbeb010afb45532604bcbc2</applet_launcher>
+        <order/>
+        <section display_value="EuDGC QrCode Scans">92908c5a1bbeb010afb45532604bcbd5</section>
+        <sys_class_name>sys_sg_applet_launcher_m2m_section</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 16:13:31</sys_created_on>
+        <sys_id>5e908c5a1bbeb010afb45532604bcbd6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="EuDGC" source="x_snc_eudgc">f13eb3861bbeb010afb45532604bcbae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_update_name>sys_sg_applet_launcher_m2m_section_5e908c5a1bbeb010afb45532604bcbd6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 16:13:31</sys_updated_on>
+    </sys_sg_applet_launcher_m2m_section>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</application>
+        <file_path/>
+        <instance_id>64549ef1db323010387021c4059619e7</instance_id>
+        <instance_name>eudgcdemo</instance_name>
+        <name>sys_sg_applet_launcher_m2m_section_5e908c5a1bbeb010afb45532604bcbd6</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_applet_launcher_m2m_section"><sys_sg_applet_launcher_m2m_section action="INSERT_OR_UPDATE"><applet_launcher display_value="EuDGC Scan">0a90c41a1bbeb010afb45532604bcbc2</applet_launcher><order/><section display_value="EuDGC QrCode Scans">92908c5a1bbeb010afb45532604bcbd5</section><sys_class_name>sys_sg_applet_launcher_m2m_section</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-09-26 16:13:31</sys_created_on><sys_id>5e908c5a1bbeb010afb45532604bcbd6</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="EuDGC" source="x_snc_eudgc">f13eb3861bbeb010afb45532604bcbae</sys_package><sys_policy/><sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope><sys_update_name>sys_sg_applet_launcher_m2m_section_5e908c5a1bbeb010afb45532604bcbd6</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-09-26 16:13:31</sys_updated_on></sys_sg_applet_launcher_m2m_section></record_update>]]></payload>
+        <payload_hash>1945760232</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>3d3eb3861bbeb010afb45532604bcbb0</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 16:13:32</sys_created_on>
+        <sys_id>e690cc5a1bbeb010afb45532604bcb1a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17c22e20d680000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 16:13:32</sys_updated_on>
+        <type>Launcher section mapping</type>
+        <update_guid>6290cc5a30beb01059018ba696736e1a</update_guid>
+        <update_guid_history>6290cc5a30beb01059018ba696736e1a:1945760232</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 17:19:13</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_applet_launcher_m2m_section">sys_sg_applet_launcher_m2m_section</sys_db_object>
+        <sys_id>45395c097fe4434caf7ca6dcec8bffa4</sys_id>
+        <sys_metadata>5e908c5a1bbeb010afb45532604bcbd6</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="EuDGC" source="x_snc_eudgc">f13eb3861bbeb010afb45532604bcbae</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_scope_delete display_value="">b6227cd5e08d4b03977fa778f245e2e9</sys_scope_delete>
+        <sys_update_name>sys_sg_applet_launcher_m2m_section_5e908c5a1bbeb010afb45532604bcbd6</sys_update_name>
+        <sys_update_version display_value="sys_sg_applet_launcher_m2m_section_5e908c5a1bbeb010afb45532604bcbd6">e690cc5a1bbeb010afb45532604bcb1a</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 17:19:13</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

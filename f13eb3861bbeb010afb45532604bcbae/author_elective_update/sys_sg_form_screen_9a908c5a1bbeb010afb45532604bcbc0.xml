@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_form_screen">
+    <sys_sg_form_screen action="DELETE">
+        <alert/>
+        <available_offline>false</available_offline>
+        <data_item/>
+        <description>EuDGC Scan and Validation</description>
+        <dynamic_prefetch_count/>
+        <empty_state/>
+        <fetch_type>not_required</fetch_type>
+        <filter/>
+        <hide_filters>false</hide_filters>
+        <hide_screen_name>false</hide_screen_name>
+        <icon display_value="icon-User">8e90c41a1bbeb010afb45532604bcbc1</icon>
+        <item_view/>
+        <name>EuDGC QrCode Scans Form Screen</name>
+        <override_context_with_data_item>false</override_context_with_data_item>
+        <roles_override/>
+        <segments_height>medium</segments_height>
+        <segments_min_width>medium</segments_min_width>
+        <sys_class_name>sys_sg_form_screen</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 16:13:31</sys_created_on>
+        <sys_id>9a908c5a1bbeb010afb45532604bcbc0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>EuDGC QrCode Scans Form Screen</sys_name>
+        <sys_package display_value="EuDGC" source="x_snc_eudgc">f13eb3861bbeb010afb45532604bcbae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_update_name>sys_sg_form_screen_9a908c5a1bbeb010afb45532604bcbc0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 16:13:31</sys_updated_on>
+        <table>x_snc_eudgc_eudgc_qrcode_scans</table>
+        <use_view_config>true</use_view_config>
+        <view_config display_value="EuDGC QrCode Scans Detail Screen View Config">da908c5a1bbeb010afb45532604bcbb5</view_config>
+    </sys_sg_form_screen>
+    <sys_translated_text action="DELETE" query="documentkey=9a908c5a1bbeb010afb45532604bcbc0"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</application>
+        <file_path/>
+        <instance_id>64549ef1db323010387021c4059619e7</instance_id>
+        <instance_name>eudgcdemo</instance_name>
+        <name>sys_sg_form_screen_9a908c5a1bbeb010afb45532604bcbc0</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_form_screen"><sys_sg_form_screen action="INSERT_OR_UPDATE"><alert/><available_offline>false</available_offline><data_item/><description>EuDGC Scan and Validation</description><dynamic_prefetch_count/><empty_state/><fetch_type>not_required</fetch_type><filter/><hide_filters>false</hide_filters><hide_screen_name>false</hide_screen_name><icon display_value="icon-User">8e90c41a1bbeb010afb45532604bcbc1</icon><item_view/><name>EuDGC QrCode Scans Form Screen</name><override_context_with_data_item>false</override_context_with_data_item><roles_override/><segments_height>medium</segments_height><segments_min_width>medium</segments_min_width><sys_class_name>sys_sg_form_screen</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-09-26 16:13:31</sys_created_on><sys_id>9a908c5a1bbeb010afb45532604bcbc0</sys_id><sys_mod_count>0</sys_mod_count><sys_name>EuDGC QrCode Scans Form Screen</sys_name><sys_package display_value="EuDGC" source="x_snc_eudgc">f13eb3861bbeb010afb45532604bcbae</sys_package><sys_policy/><sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope><sys_update_name>sys_sg_form_screen_9a908c5a1bbeb010afb45532604bcbc0</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-09-26 16:13:31</sys_updated_on><table>x_snc_eudgc_eudgc_qrcode_scans</table><use_view_config>true</use_view_config><view_config display_value="EuDGC QrCode Scans Detail Screen View Config">da908c5a1bbeb010afb45532604bcbb5</view_config></sys_sg_form_screen><sys_translated_text action="delete_multiple" query="documentkey=9a908c5a1bbeb010afb45532604bcbc0"/></record_update>]]></payload>
+        <payload_hash>-192213327</payload_hash>
+        <record_name>EuDGC QrCode Scans Form Screen</record_name>
+        <reverted_from/>
+        <source>3d3eb3861bbeb010afb45532604bcbb0</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 16:13:33</sys_created_on>
+        <sys_id>3e90cc5a1bbeb010afb45532604bcbc6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17c22e210e90000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 16:13:33</sys_updated_on>
+        <type>Record screen</type>
+        <update_guid>b690cc5ae0beb010d0e4defd5e30edc6</update_guid>
+        <update_guid_history>b690cc5ae0beb010d0e4defd5e30edc6:-192213327</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 16:56:58</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_form_screen">sys_sg_form_screen</sys_db_object>
+        <sys_id>3537a7a231f04dbc9783363aac3d7e24</sys_id>
+        <sys_metadata>9a908c5a1bbeb010afb45532604bcbc0</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>EuDGC QrCode Scans Form Screen</sys_name>
+        <sys_package display_value="EuDGC" source="x_snc_eudgc">f13eb3861bbeb010afb45532604bcbae</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_scope_delete display_value="">b6227cd5e08d4b03977fa778f245e2e9</sys_scope_delete>
+        <sys_update_name>sys_sg_form_screen_9a908c5a1bbeb010afb45532604bcbc0</sys_update_name>
+        <sys_update_version display_value="sys_sg_form_screen_9a908c5a1bbeb010afb45532604bcbc0">3e90cc5a1bbeb010afb45532604bcbc6</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 16:56:58</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

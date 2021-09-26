@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_chart">
+    <sys_sg_chart action="INSERT_OR_UPDATE">
+        <jump_to_screen display_value="Launcher Button">28c05cde1bfeb010afb45532604bcb8c</jump_to_screen>
+        <name>Daily Trends</name>
+        <report display_value="EuDGC Scan Trend">0eed4cda1bfeb010afb45532604bcb4c</report>
+        <sys_class_name>sys_sg_chart</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 17:18:19</sys_created_on>
+        <sys_id>2b6fcc5e1bfeb010afb45532604bcb76</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Daily Trends</sys_name>
+        <sys_package display_value="EuDGC" source="x_snc_eudgc">f13eb3861bbeb010afb45532604bcbae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_update_name>sys_sg_chart_2b6fcc5e1bfeb010afb45532604bcb76</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 17:27:35</sys_updated_on>
+        <title/>
+        <type>report</type>
+        <widget/>
+    </sys_sg_chart>
+</record_update>

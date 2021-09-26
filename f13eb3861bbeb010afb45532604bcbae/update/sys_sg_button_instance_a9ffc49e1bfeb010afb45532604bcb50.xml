@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_button_instance">
+    <sys_sg_button_instance action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <button display_value="Acquire DGC QrCode">7fcb445a1bfeb010afb45532604bcb4e</button>
+        <color_theme>primary</color_theme>
+        <description/>
+        <field_name/>
+        <icon display_value="icon-Camera-Solid">a1ffc49e1bfeb010afb45532604bcb4e</icon>
+        <label>Scan DGC</label>
+        <location>quick_action</location>
+        <name>Scan DGC</name>
+        <order/>
+        <parent>0a90c41a1bbeb010afb45532604bcbc2</parent>
+        <parent_table>sys_sg_applet_launcher</parent_table>
+        <sys_class_name>sys_sg_button_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-26 17:20:38</sys_created_on>
+        <sys_id>a9ffc49e1bfeb010afb45532604bcb50</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Scan DGC</sys_name>
+        <sys_package display_value="EuDGC" source="x_snc_eudgc">f13eb3861bbeb010afb45532604bcbae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+        <sys_update_name>sys_sg_button_instance_a9ffc49e1bfeb010afb45532604bcb50</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-26 17:20:38</sys_updated_on>
+        <table/>
+    </sys_sg_button_instance>
+    <sys_translated_text action="delete_multiple" query="documentkey=a9ffc49e1bfeb010afb45532604bcb50"/>
+</record_update>
