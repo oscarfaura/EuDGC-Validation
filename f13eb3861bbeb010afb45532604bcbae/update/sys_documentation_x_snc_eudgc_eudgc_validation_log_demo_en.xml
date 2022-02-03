@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="demo" label="Demo" language="en" table="x_snc_eudgc_eudgc_validation_log">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>demo</element>
+            <help/>
+            <hint/>
+            <label>Demo</label>
+            <language>en</language>
+            <name>x_snc_eudgc_eudgc_validation_log</name>
+            <plural>Demos</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-02-03 08:58:30</sys_created_on>
+            <sys_id>d1bbfbf31b1d09106e0120a2b24bcb88</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Demo</sys_name>
+            <sys_package display_value="EuDGC" source="x_snc_eudgc">f13eb3861bbeb010afb45532604bcbae</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="EuDGC">f13eb3861bbeb010afb45532604bcbae</sys_scope>
+            <sys_update_name>sys_documentation_x_snc_eudgc_eudgc_validation_log_demo_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-02-03 08:58:30</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
